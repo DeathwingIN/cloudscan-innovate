@@ -93,6 +93,7 @@ const ProductPage = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [isSpecsOpen, setIsSpecsOpen] = useState(false);
   const [hoverPosition, setHoverPosition] = useState<{ x: number; y: number } | null>(null);
+  const [isFullScreenModalOpen, setIsFullScreenModalOpen] = useState(false);
 
   const product = products[productId as keyof typeof products];
   if (!product) {
@@ -120,9 +121,10 @@ const ProductPage = () => {
               <div className="space-y-4 relative">
                 {/* Main Image with Zoom */}
                 <div
-                    className="relative overflow-hidden rounded-lg bg-gray-100 aspect-square"
+                    className="relative overflow-hidden rounded-lg bg-gray-100 aspect-square cursor-pointer"
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
+                    onClick={() => setIsFullScreenModalOpen(true)} // Open full-screen modal on mobile
                 >
                   <img
                       src={product.images[selectedImage]}
@@ -132,7 +134,7 @@ const ProductPage = () => {
                   {/* Highlight Box */}
                   {hoverPosition && (
                       <div
-                          className="absolute border-2 border-primary bg-black/20 pointer-events-none"
+                          className="absolute border-2 border-primary bg-black/20 pointer-events-none md:block hidden"
                           style={{
                             left: `${hoverPosition.x}%`,
                             top: `${hoverPosition.y}%`,
@@ -147,7 +149,7 @@ const ProductPage = () => {
                 {/* Zoom Pane */}
                 {hoverPosition && (
                     <div
-                        className={`hidden md:block absolute top-0 left-full ml-4 w-[600px] h-[600px] bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200`}
+                        className={`hidden md:block absolute top-0 left-full ml-4 w-[300px] h-[300px] bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200`}
                         style={{
                           backgroundImage: `url(${product.images[selectedImage]})`,
                           backgroundPosition: `${hoverPosition.x}% ${hoverPosition.y}%`,
@@ -229,6 +231,55 @@ const ProductPage = () => {
             </div>
           </div>
         </main>
+
+        {/* Full-Screen Modal for Mobile */}
+        {isFullScreenModalOpen && (
+            <div
+                className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center"
+                onClick={(e) => {
+                  if (e.target === e.currentTarget) setIsFullScreenModalOpen(false); // Close modal when clicking outside
+                }}
+            >
+              <div className="relative w-full max-w-4xl mx-auto">
+                {/* Close Button */}
+                <button
+                    className="absolute top-4 right-4 text-white text-xl z-10"
+                    onClick={() => setIsFullScreenModalOpen(false)}
+                >
+                  &times;
+                </button>
+
+                {/* Slider */}
+                <div className="flex items-center justify-center">
+                  <img
+                      src={product.images[selectedImage]}
+                      alt={`${product.title} full view`}
+                      className="w-full h-auto max-h-screen object-contain"
+                  />
+                </div>
+
+                {/* Thumbnails */}
+                <div className="flex justify-center space-x-4 mt-4">
+                  {product.images.map((image, index) => (
+                      <button
+                          key={index}
+                          className={`w-16 h-16 rounded-lg overflow-hidden border-2 ${
+                              selectedImage === index ? "border-white" : "border-transparent"
+                          }`}
+                          onClick={() => setSelectedImage(index)}
+                      >
+                        <img
+                            src={image}
+                            alt={`${product.title} thumbnail ${index + 1}`}
+                            className="w-full h-full object-cover"
+                        />
+                      </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+        )}
+
         <Footer />
       </div>
   );
