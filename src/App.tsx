@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ContactUs from "./pages/ContactUs";
 import ProductPage from "./pages/ProductPage";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -16,12 +18,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/products/:productId" element={<ProductPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="flex flex-col min-h-screen">
+          <Navbar/>
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Index/>}/>
+              <Route path="/contact" element={<ContactUs/>}/>
+              <Route path="/products/:productId" element={<ProductPage/>}/>
+              <Route path="*" element={<NotFound/>}/>
+            </Routes>
+            </main>
+            <Footer/>
+            </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

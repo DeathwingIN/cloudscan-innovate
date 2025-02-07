@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "@/components/Navbar";
+
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
-import Footer from "@/components/Footer";
+
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -42,15 +42,11 @@ const Index = () => {
           }
         `}
             </style>
-
             {/* Navbar */}
-            <Navbar />
-
             {/* Main Content */}
             <Hero />
             <About />
             <Services />
-            <Footer />
 
             {/* Scroll-to-Top Button */}
 
