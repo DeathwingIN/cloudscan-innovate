@@ -15,7 +15,11 @@ const products = {
     title: "Smart Scanner Pro",
     description: "Advanced QR scanning with real-time ERP updates",
     price: "$499",
-    images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    images: [
+      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
+    ],
     features: [
       "Real-time Microsoft Business Central Integration",
       "High-speed QR & Barcode Scanning",
@@ -36,7 +40,11 @@ const products = {
     title: "Scanner Lite",
     description: "Efficient scanning solution for small businesses",
     price: "$299",
-    images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    images: [
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+    ],
     features: [
       "Business Central Basic Integration",
       "QR & 1D Barcode Scanning",
@@ -57,7 +65,11 @@ const products = {
     title: "CloudSmart App",
     description: "Companion app for seamless integration",
     price: "Contact for Pricing",
-    images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    images: [
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    ],
     features: [
       "Real-time Sync with Scanners",
       "Cloud Data Management",
