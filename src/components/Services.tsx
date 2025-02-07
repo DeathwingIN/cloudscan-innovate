@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Smartphone, QrCode, Database } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const products = [
@@ -7,16 +8,19 @@ const Services = () => {
       title: "Smart Scanner Pro",
       icon: QrCode,
       description: "Advanced QR scanning with real-time ERP updates",
+      link: "/products/smart-scanner-pro"
     },
     {
       title: "Scanner Lite",
       icon: Database,
       description: "Efficient scanning solution for small businesses",
+      link: "/products/scanner-lite"
     },
     {
       title: "CloudSmart App",
       icon: Smartphone,
       description: "Companion app for seamless integration",
+      link: "/products/cloudsmart-app"
     },
   ];
 
@@ -43,10 +47,12 @@ const Services = () => {
               </div>
               <h3 className="text-xl font-semibold text-secondary mb-4">{product.title}</h3>
               <p className="text-muted-foreground mb-6">{product.description}</p>
-              <Button variant="outline" className="group">
-                Learn More
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <Link to={product.link}>
+                <Button variant="outline" className="group">
+                  Learn More
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
