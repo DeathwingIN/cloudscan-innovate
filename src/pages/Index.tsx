@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
-import Footer from "@/components/Footer";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -19,7 +17,6 @@ const Index = () => {
                 setShowScrollButton(false);
             }
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
@@ -39,38 +36,31 @@ const Index = () => {
                 {`
           html {
             scroll-behavior: smooth;
+            overflow-y: auto; /* Ensure consistent scrolling behavior */
+          }
+          body {
+            margin: 0; /* Remove default browser margin */
           }
         `}
             </style>
-
-            {/* Navbar */}
-            <Navbar />
 
             {/* Main Content */}
             <Hero />
             <About />
             <Services />
-            <Footer />
 
             {/* Scroll-to-Top Button */}
-
             {showScrollButton && (
                 <motion.button
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                     onClick={scrollToTop}
-                    className="fixed bottom-6 right-6 bg-primary text-white p-5 rounded-full shadow-lg hover:bg-primary/90 transition-colors z-50"
+                    className="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors z-50"
                 >
-                    <button
-                        onClick={scrollToTop}
-                        className="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors z-50"
-                    >
-                        <ArrowUp size={20}/>
-                    </button>
+                    <ArrowUp size={20} />
                 </motion.button>
             )}
-
         </div>
     );
 };
