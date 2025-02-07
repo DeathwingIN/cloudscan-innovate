@@ -149,7 +149,7 @@ const ProductPage = () => {
                 {/* Zoom Pane */}
                 {hoverPosition && (
                     <div
-                        className={`hidden md:block absolute top-0 left-full ml-4 w-[300px] h-[300px] bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200`}
+                        className={`hidden md:block absolute top-0 left-full ml-4 w-[800px] h-[600px] bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200`}
                         style={{
                           backgroundImage: `url(${product.images[selectedImage]})`,
                           backgroundPosition: `${hoverPosition.x}% ${hoverPosition.y}%`,
