@@ -38,8 +38,8 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight md:leading-normal"
                 >
-                  Smart Scanning for
-                  <span className="text-primary"> Modern Business</span>
+                  Smarter Scanning Faster Operations
+                  <span className="text-primary"> Zero Errors.</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, x: -50 }}
@@ -48,9 +48,8 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8"
                 >
-                  Transform your business operations with our innovative smart
-                  scanners and companion app. Seamlessly integrate with Microsoft
-                  Business Central.
+                  Supercharge your business with Cloud Smart’s barcode and mobile scanning solutions. Whether you’re managing inventory,
+                  tracking production, or streamlining logistics, our cutting-edge technology ensures every step is fast, accurate, and effortless.
                 </motion.p>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
