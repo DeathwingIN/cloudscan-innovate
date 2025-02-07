@@ -42,14 +42,11 @@ const Index = () => {
           }
         `}
             </style>
-            {/* Navbar */}
             {/* Main Content */}
             <Hero />
             <About />
             <Services />
-
             {/* Scroll-to-Top Button */}
-
             {showScrollButton && (
                 <motion.button
                     initial={{ opacity: 0 }}

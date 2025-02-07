@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
+  const history = useNavigate(); // For programmatic navigation
 
   // Close the mobile menu when the route changes
   useEffect(() => {
@@ -15,11 +16,23 @@ const Navbar = () => {
 
   // Smooth scroll to sections
   const handleScrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      setIsOpen(false);
+    if (location.pathname !== "/") {
+      // Navigate to the homepage first
+      history("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100); // Small delay to allow navigation to complete
+    } else {
+      // Already on the homepage, just scroll to the section
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
+    setIsOpen(false); // Close the menu after scrolling
   };
 
   return (

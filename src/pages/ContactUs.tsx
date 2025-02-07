@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 type ContactFormData = {
   name: string;
@@ -33,8 +31,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <div className="flex flex-col">
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -44,10 +41,10 @@ const ContactUs = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {/* Contact Information */}
-            <div className="space-y-8">
-              <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
+            <div className="space-y-8 justify-between mb-10 ">
+              <h2 className="text-2xl text-start font-semibold mb-6">Get in Touch</h2>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -78,7 +75,6 @@ const ContactUs = () => {
                 </div>
               </div>
             </div>
-
             {/* Contact Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
@@ -142,7 +138,7 @@ const ContactUs = () => {
           </div>
         </div>
       </main>
-      <Footer />
+
     </div>
   );
 };
