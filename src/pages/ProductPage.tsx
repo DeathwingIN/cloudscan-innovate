@@ -92,101 +92,145 @@ const ProductPage = () => {
   const { productId } = useParams<{ productId: string }>();
   const [selectedImage, setSelectedImage] = useState(0);
   const [isSpecsOpen, setIsSpecsOpen] = useState(false);
+  const [hoverPosition, setHoverPosition] = useState<{ x: number; y: number } | null>(null);
 
   const product = products[productId as keyof typeof products];
-
   if (!product) {
     return <div>Product not found</div>;
   }
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100; // Percentage X position
+    const y = ((e.clientY - top) / height) * 100; // Percentage Y position
+    setHoverPosition({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setHoverPosition(null);
+  };
+
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow pt-24 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Image Gallery */}
-            <div className="space-y-4">
-              <div className="relative overflow-hidden rounded-lg bg-gray-100 aspect-square">
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow pt-24 pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Image Gallery */}
+              <div className="space-y-4 relative">
+                {/* Main Image with Zoom */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center transform hover:scale-150 transition-transform duration-300 cursor-zoom-in"
-                  style={{ backgroundImage: `url(${product.images[selectedImage]})` }}
-                />
-              </div>
-              <div className="grid grid-cols-3 gap-4">
-                {product.images.map((image, index) => (
-                  <button
-                    key={index}
-                    className={`aspect-square rounded-lg overflow-hidden border-2 ${
-                      selectedImage === index ? "border-primary" : "border-transparent"
-                    }`}
-                    onClick={() => setSelectedImage(index)}
-                  >
-                    <img
-                      src={image}
-                      alt={`${product.title} view ${index + 1}`}
+                    className="relative overflow-hidden rounded-lg bg-gray-100 aspect-square"
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                >
+                  <img
+                      src={product.images[selectedImage]}
+                      alt={`${product.title} main view`}
                       className="w-full h-full object-cover"
+                  />
+                  {/* Highlight Box */}
+                  {hoverPosition && (
+                      <div
+                          className="absolute border-2 border-primary bg-black/20 pointer-events-none"
+                          style={{
+                            left: `${hoverPosition.x}%`,
+                            top: `${hoverPosition.y}%`,
+                            transform: "translate(-50%, -50%)",
+                            width: "20%",
+                            height: "20%",
+                          }}
+                      />
+                  )}
+                </div>
+
+                {/* Zoom Pane */}
+                {hoverPosition && (
+                    <div
+                        className={`hidden md:block absolute top-0 left-full ml-4 w-[600px] h-[600px] bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200`}
+                        style={{
+                          backgroundImage: `url(${product.images[selectedImage]})`,
+                          backgroundPosition: `${hoverPosition.x}% ${hoverPosition.y}%`,
+                          backgroundSize: "200%",
+                        }}
                     />
-                  </button>
-                ))}
-              </div>
-            </div>
+                )}
 
-            {/* Product Details */}
-            <div className="space-y-8">
-              <div>
-                <h1 className="text-3xl font-bold text-primary mb-4">{product.title}</h1>
-                <p className="text-muted-foreground mb-6">{product.description}</p>
-                <p className="text-2xl font-semibold">{product.price}</p>
-              </div>
-
-              {/* Features */}
-              <div>
-                <h2 className="text-xl font-semibold mb-4">Key Features</h2>
-                <ul className="space-y-2">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-center space-x-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                      <span>{feature}</span>
-                    </li>
+                {/* Thumbnail Images */}
+                <div className="grid grid-cols-3 gap-4">
+                  {product.images.map((image, index) => (
+                      <button
+                          key={index}
+                          className={`aspect-square rounded-lg overflow-hidden border-2 ${
+                              selectedImage === index ? "border-primary" : "border-transparent"
+                          }`}
+                          onClick={() => setSelectedImage(index)}
+                      >
+                        <img
+                            src={image}
+                            alt={`${product.title} view ${index + 1}`}
+                            className="w-full h-full object-cover"
+                        />
+                      </button>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              {/* Specifications */}
-              <Collapsible open={isSpecsOpen} onOpenChange={setIsSpecsOpen}>
-                <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left">
-                  <span className="text-xl font-semibold">Specifications</span>
-                  {isSpecsOpen ? <ChevronUp /> : <ChevronDown />}
-                </CollapsibleTrigger>
-                <CollapsibleContent className="pt-4">
-                  <dl className="space-y-4">
-                    {Object.entries(product.specifications).map(([key, value]) => (
-                      <div key={key} className="grid grid-cols-2">
-                        <dt className="font-medium text-muted-foreground">{key}</dt>
-                        <dd>{value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </CollapsibleContent>
-              </Collapsible>
+              {/* Product Details */}
+              <div className="space-y-8">
+                <div>
+                  <h1 className="text-3xl font-bold text-primary mb-4">{product.title}</h1>
+                  <p className="text-muted-foreground mb-6">{product.description}</p>
+                  <p className="text-2xl font-semibold">{product.price}</p>
+                </div>
 
-              {/* Call to Action */}
-              <div className="space-y-4">
-                <Button className="w-full" size="lg">
-                  Request Quote
-                </Button>
-                <Button variant="outline" className="w-full" size="lg">
-                  <MessageSquare className="mr-2 h-4 w-4" />
-                  Contact Sales
-                </Button>
+                {/* Features */}
+                <div>
+                  <h2 className="text-xl font-semibold mb-4">Key Features</h2>
+                  <ul className="space-y-2">
+                    {product.features.map((feature, index) => (
+                        <li key={index} className="flex items-center space-x-2">
+                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                          <span>{feature}</span>
+                        </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Specifications */}
+                <Collapsible open={isSpecsOpen} onOpenChange={setIsSpecsOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left">
+                    <span className="text-xl font-semibold">Specifications</span>
+                    {isSpecsOpen ? <ChevronUp /> : <ChevronDown />}
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="pt-4">
+                    <dl className="space-y-4">
+                      {Object.entries(product.specifications).map(([key, value]) => (
+                          <div key={key} className="grid grid-cols-2">
+                            <dt className="font-medium text-muted-foreground">{key}</dt>
+                            <dd>{value}</dd>
+                          </div>
+                      ))}
+                    </dl>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Call to Action */}
+                <div className="space-y-4">
+                  <Button className="w-full" size="lg">
+                    Request Quote
+                  </Button>
+                  <Button variant="outline" className="w-full" size="lg">
+                    <MessageSquare className="mr-2 h-4 w-4" />
+                    Contact Sales
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
+        </main>
+        <Footer />
+      </div>
   );
 };
 
