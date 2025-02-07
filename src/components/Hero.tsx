@@ -7,7 +7,7 @@ const Hero = () => {
   return (
       <section
           id="home"
-          className="h-screen bg-center bg-no-repeat overflow-hidden relative"
+          className="h-screen bg-center bg-cover bg-no-repeat overflow-hidden relative"
           style={{
             backgroundImage:
                 "url('https://plus.unsplash.com/premium_photo-1663040309722-6c9dbe9a1f0b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -38,8 +38,8 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight md:leading-normal"
                 >
-                  Smart Scanning for
-                  <span className="text-primary"> Modern Business</span>
+                  Smarter Scanning Faster Operations
+                  <span className="text-primary"> Zero Errors</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, x: -50 }}
@@ -48,34 +48,34 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8"
                 >
-                  Transform your business operations with our innovative smart
-                  scanners and companion app. Seamlessly integrate with Microsoft
-                  Business Central.
+                  Supercharge your business with Cloud Smart’s barcode and mobile scanning solutions. Whether you’re managing
+                  inventory, tracking production, or streamlining
+                  logistics, our cutting-edge technology ensures every step is fast, accurate, and effortless.
                 </motion.p>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.6 }}
-                    viewport={{ once: true }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-                >
-                  <Link to="/contact">
-                    <Button
-                        size="lg"
-                        className="group transform transition-all hover:scale-105"
-                    >
-                      Explore Products
-                      <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                    </Button>
-                  </Link>
-                  <Button
-                      size="lg"
-                      variant="outline"
-                      className="group transform transition-all border-0 hover:scale-105"
-                  >
-                    Watch Demo
-                  </Button>
-                </motion.div>
+                {/*<motion.div*/}
+                {/*    initial={{ opacity: 0, y: 20 }}*/}
+                {/*    whileInView={{ opacity: 1, y: 0 }}*/}
+                {/*    transition={{ duration: 0.6, delay: 0.6 }}*/}
+                {/*    viewport={{ once: true }}*/}
+                {/*    className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"*/}
+                {/*>*/}
+                {/*  <Link to="/contact">*/}
+                {/*    <Button*/}
+                {/*        size="lg"*/}
+                {/*        className="group transform transition-all hover:scale-105"*/}
+                {/*    >*/}
+                {/*      Explore Products*/}
+                {/*      <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />*/}
+                {/*    </Button>*/}
+                {/*  </Link>*/}
+                {/*  <Button*/}
+                {/*      size="lg"*/}
+                {/*      variant="outline"*/}
+                {/*      className="group transform transition-all border-0 hover:scale-105"*/}
+                {/*  >*/}
+                {/*    Watch Demo*/}
+                {/*  </Button>*/}
+                {/*</motion.div>*/}
               </div>
 
               {/* Video Container */}
