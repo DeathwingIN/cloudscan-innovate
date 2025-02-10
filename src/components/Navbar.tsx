@@ -57,7 +57,7 @@ const Navbar = () => {
                   onClick={handleHomeClick} // Scroll to top on Home link click
                   // className="text-2xl font-bold text-primary tracking-wide transition-colors hover:text-primary/80"
               >
-                <img src="./logo.png" className="md:h-[40px] h-1/2 w-auto object-contain cursor-pointer" alt="Cloud Smart"/>
+                <img src="./logo.png" className="h-[40px]  w-auto object-contain cursor-pointer" alt="Cloud Smart"/>
               </Link>
             </div>
 
