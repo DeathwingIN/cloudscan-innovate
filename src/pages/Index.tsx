@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import Hero from "@/components/Hero";
-import Hero from "@/components/Hero2";
+ import Hero from "@/components/Hero";
+//import Hero from "@/components/Hero2";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import { ArrowUp } from "lucide-react";

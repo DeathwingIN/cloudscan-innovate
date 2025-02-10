@@ -53,27 +53,22 @@ const Services = () => {
                       className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
                   >
                     <div className="flex flex-col justify-between h-full">
-                      <div>
-                        {/* Icon */}
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                          <Icon className="text-primary" size={24}/>
+                        <div>
+                            {/* Icon */}
+                            {/*<div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">*/}
+                            {/*    */}
+                            {/*</div>*/}
+                            <img src={product.icon} alt={product.title} className="bg-primary/10 rounded-lg flex items-center justify-center mb-6"/>
+                            {/* Title */}
+                            <h3 className="text-xl font-semibold text-secondary mb-4">
+                                {product.title}
+                            </h3>
                         </div>
 
-                        {/* Title */}
-                        <h3 className="text-xl font-semibold text-secondary mb-4">
-                          {product.title}
-                        </h3>
-
-                        {/* Description with Truncation */}
-                        <p className="text-muted-foreground line-clamp-[3] md:line-clamp-[4] mb-6">
-                          {product.description}
-                        </p>
-                      </div>
-
-                      {/* Learn More Button (Fixed Position) */}
-                      <div>
-                      <Link to={`/products/${key}`}>
-                          <Button variant="outline" className="group w-full md:w-auto">
+                        {/* Learn More Button (Fixed Position) */}
+                        <div>
+                            <Link to={`/products/${key}`}>
+                            <Button variant="outline" className="group w-full md:w-auto">
                             Learn More
                             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform"/>
                           </Button>
