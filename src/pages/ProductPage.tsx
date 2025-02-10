@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { ChevronDown, ChevronUp, MessageSquare } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-
 import { products } from "../data/productData";
 
 const ProductPage = () => {
@@ -17,8 +16,8 @@ const ProductPage = () => {
   const [isSpecsOpen, setIsSpecsOpen] = useState(false);
   const [hoverPosition, setHoverPosition] = useState<{ x: number; y: number } | null>(null);
   const [isFullScreenModalOpen, setIsFullScreenModalOpen] = useState(false);
-
   const product = products[productId as keyof typeof products];
+
   if (!product) {
     return <div>Product not found</div>;
   }
@@ -32,6 +31,43 @@ const ProductPage = () => {
 
   const handleMouseLeave = () => {
     setHoverPosition(null);
+  };
+
+  const renderSpecification = (key: string, value: any, depth: number = 0) => {
+    if (typeof value === "object" && !Array.isArray(value)) {
+      return (
+          <div key={key} className={depth > 0 ? "ml-4" : ""}>
+            <dt className="font-medium text-muted-foreground">{key}</dt>
+            <dd>
+              <dl className="space-y-2">
+                {Object.entries(value).map(([nestedKey, nestedValue]) =>
+                    renderSpecification(nestedKey, nestedValue, depth + 1)
+                )}
+              </dl>
+            </dd>
+          </div>
+      );
+    } else if (Array.isArray(value)) {
+      return (
+          <div key={key} className={depth > 0 ? "ml-4" : ""}>
+            <dt className="font-medium text-muted-foreground">{key}</dt>
+            <dd>
+              <ul className="list-disc ml-4">
+                {value.map((item, index) => (
+                    <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </dd>
+          </div>
+      );
+    } else {
+      return (
+          <div key={key} className={`grid grid-cols-2 ${depth > 0 ? "ml-4" : ""}`}>
+            <dt className="font-medium text-muted-foreground">{key}</dt>
+            <dd>{value}</dd>
+          </div>
+      );
+    }
   };
 
   return (
@@ -67,7 +103,6 @@ const ProductPage = () => {
                       />
                   )}
                 </div>
-
                 {/* Zoom Pane */}
                 {hoverPosition && (
                     <div
@@ -79,7 +114,6 @@ const ProductPage = () => {
                         }}
                     />
                 )}
-
                 {/* Thumbnail Images */}
                 <div className="grid grid-cols-3 gap-4">
                   {product.images.map((image, index) => (
@@ -99,15 +133,13 @@ const ProductPage = () => {
                   ))}
                 </div>
               </div>
-
               {/* Product Details */}
               <div className="space-y-8">
                 <div>
                   <h1 className="text-3xl font-bold text-primary mb-4">{product.title}</h1>
+                  <p className="text-2xl font-semibold pb-4">{product.name}</p>
                   <p className="text-muted-foreground mb-6">{product.description}</p>
-                  <p className="text-2xl font-semibold">{product.price}</p>
                 </div>
-
                 {/* Features */}
                 <div>
                   <h2 className="text-xl font-semibold mb-4">Key Features</h2>
@@ -120,7 +152,6 @@ const ProductPage = () => {
                     ))}
                   </ul>
                 </div>
-
                 {/* Specifications */}
                 <Collapsible open={isSpecsOpen} onOpenChange={setIsSpecsOpen}>
                   <CollapsibleTrigger className="flex items-center justify-between w-full py-2 text-left">
@@ -129,34 +160,24 @@ const ProductPage = () => {
                   </CollapsibleTrigger>
                   <CollapsibleContent className="pt-4">
                     <dl className="space-y-4">
-                      {Object.entries(product.specifications).map(([key, value]) => (
-                          <div key={key} className="grid grid-cols-2">
-                            <dt className="font-medium text-muted-foreground">{key}</dt>
-                            <dd>{value}</dd>
-                          </div>
-                      ))}
+                      {Object.entries(product.specifications).map(([key, value]) =>
+                          renderSpecification(key, value, 0) // Start with depth 0 for top-level
+                      )}
                     </dl>
                   </CollapsibleContent>
                 </Collapsible>
-
                 {/* Call to Action */}
                 <div className="space-y-4">
-
                   <Link to="/contact">
                     <Button variant="default" className="transition-transform hover:scale-105">
                       Request Quote
                     </Button>
                   </Link>
-                  {/*<Button variant="outline" className="w-full" size="lg">*/}
-                  {/*  <MessageSquare className="mr-2 h-4 w-4" />*/}
-                  {/*  Contact Sales*/}
-                  {/*</Button>*/}
                 </div>
               </div>
             </div>
           </div>
         </main>
-
         {/* Full-Screen Modal for Mobile */}
         {isFullScreenModalOpen && (
             <div
@@ -173,7 +194,6 @@ const ProductPage = () => {
                 >
                   &times;
                 </button>
-
                 {/* Slider */}
                 <div className="flex items-center justify-center">
                   <img
@@ -182,7 +202,6 @@ const ProductPage = () => {
                       className="w-full h-auto max-h-screen object-contain"
                   />
                 </div>
-
                 {/* Thumbnails */}
                 <div className="flex justify-center space-x-4 mt-4">
                   {product.images.map((image, index) => (
