@@ -7,7 +7,7 @@ const Hero = () => {
   return (
       <section
           id="home"
-          className="p-20 mt-20 overflow-hidden  relative "
+          className="p-20 md:mt-20 mt-0 overflow-hidden  relative "
 
       >
 

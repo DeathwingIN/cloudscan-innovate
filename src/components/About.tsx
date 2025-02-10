@@ -44,7 +44,7 @@ const About = () => {
                   <h4 className="text-l font-semibold text-secondary mb-1 ">
                       Bringing Intelligence to Every Scan
                   </h4>
-                  <p className="text-muted-foreground mb-8">
+                  <p className="text-muted-foreground mb-8 text-justify">
                       At Cloud Smart, we don’t just provide barcode solutions—we transform the way businesses operate.
                       Our mission is simple: eliminate inefficiencies, reduce errors, and power up productivity with cutting-edge scanning
                       technology that seamlessly integrates into your existing ERP system.<br/>
