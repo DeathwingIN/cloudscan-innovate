@@ -12,6 +12,7 @@ const Hero = () => {
             backgroundImage:
                 "url('https://plus.unsplash.com/premium_photo-1663040309722-6c9dbe9a1f0b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
           }}
+
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
@@ -52,30 +53,30 @@ const Hero = () => {
                   inventory, tracking production, or streamlining
                   logistics, our cutting-edge technology ensures every step is fast, accurate, and effortless.
                 </motion.p>
-                {/*<motion.div*/}
-                {/*    initial={{ opacity: 0, y: 20 }}*/}
-                {/*    whileInView={{ opacity: 1, y: 0 }}*/}
-                {/*    transition={{ duration: 0.6, delay: 0.6 }}*/}
-                {/*    viewport={{ once: true }}*/}
-                {/*    className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"*/}
-                {/*>*/}
-                {/*  <Link to="/contact">*/}
-                {/*    <Button*/}
-                {/*        size="lg"*/}
-                {/*        className="group transform transition-all hover:scale-105"*/}
-                {/*    >*/}
-                {/*      Explore Products*/}
-                {/*      <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />*/}
-                {/*    </Button>*/}
-                {/*  </Link>*/}
-                {/*  <Button*/}
-                {/*      size="lg"*/}
-                {/*      variant="outline"*/}
-                {/*      className="group transform transition-all border-0 hover:scale-105"*/}
-                {/*  >*/}
-                {/*    Watch Demo*/}
-                {/*  </Button>*/}
-                {/*</motion.div>*/}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+                >
+                  <Link to="/contact">
+                    <Button
+                        size="lg"
+                        className="group transform transition-all hover:scale-105"
+                    >
+                      Explore Products
+                      <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                    </Button>
+                  </Link>
+                  <Button
+                      size="lg"
+                      variant="outline"
+                      className="group transform transition-all border-0 hover:scale-105"
+                  >
+                    Watch Demo
+                  </Button>
+                </motion.div>
               </div>
 
               {/* Video Container */}
@@ -97,9 +98,10 @@ const Hero = () => {
                         poster="/placeholder.svg" // Path to a fallback image
                         className="w-full h-full object-cover rounded-2xl"
                     >
-                      <source src="/scannervideo.mp4" type="video/mp4" />
+                      <source src={"https://www.youtube.com/watch?v=uLsfAou6C1U"}  />
                       Your browser does not support the video tag.
                     </video>
+                    {/*<img src="/placeholder.svg" alt=""/>*/}
                   </div>
                 </motion.div>
               </div>

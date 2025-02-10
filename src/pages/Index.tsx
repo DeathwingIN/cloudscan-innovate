@@ -30,38 +30,37 @@ const Index = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white overflow-x-hidden">
-            {/* Enable smooth scrolling */}
-            <style>
-                {`
-          html {
-            scroll-behavior: smooth;
-            overflow-y: auto; /* Ensure consistent scrolling behavior */
-          }
-          body {
-            margin: 0; /* Remove default browser margin */
-          }
-        `}
-            </style>
+        <div className="min-h-screen bg-white  relative">
+
+
 
             {/* Main Content */}
-            <Hero />
-            <About />
-            <Services />
+            <Hero/>
+            <About/>
+            <Services/>
 
             {/* Scroll-to-Top Button */}
             {showScrollButton && (
                 <motion.button
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{duration: 0.3}}
                     onClick={scrollToTop}
                     className="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors z-50"
                 >
-                    <ArrowUp size={20} />
+                    <ArrowUp size={20}/>
                 </motion.button>
             )}
+
+
         </div>
+
+    // <div>
+    //     <Hero/>
+    //     <About/>
+    //     <Services/>
+    // </div>
+
     );
 };
 
