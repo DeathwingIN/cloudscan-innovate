@@ -138,7 +138,7 @@ const ProductPage = () => {
                 <div>
                   <h1 className="text-3xl font-bold text-primary mb-4">{product.title}</h1>
                   {/*<p className="text-2xl font-semibold pb-4">{product.name}</p>*/}
-                  <p className="text-muted-foreground mb-6">{product.description}</p>
+                  <p className="text-muted-foreground text-justify mb-6">{product.description}</p>
                 </div>
                 {/* Features */}
                 <div>
@@ -168,7 +168,10 @@ const ProductPage = () => {
                 </Collapsible>
                 {/* Call to Action */}
                 <div className="space-y-4">
-                  <Link to="/contact">
+                  <Link
+                      to="/request"
+                      state={{ product: product.title }}
+                  >
                     <Button variant="default" className="transition-transform hover:scale-105">
                       Request Quote
                     </Button>
