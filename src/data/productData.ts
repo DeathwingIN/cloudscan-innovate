@@ -6,7 +6,7 @@ export const products = {
             " high-speed Octa-Core processor, and Android 10/13 OS. " +
             "It supports advanced barcode scanning, NFC, and seamless data collection to improve operational efficiency.",
         name: "SCX41 Handheld Terminal",
-        icon: "QrCode", // Icon name for Services.tsx
+        icon: "./SCX41.webp", // Icon name for Services.tsx
         images: [
             "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
             "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
@@ -43,7 +43,7 @@ export const products = {
         description: "The SMT71i is a powerful, rugged mobile terminal with a 6-inch IPS display, Android 13 OS, and high-speed Cortex-A76 processor. " +
             "It offers superior barcode scanning, NFC, and UHF RFID for high-performance enterprise applications.",
         name: "SMT71i Handheld Terminal",
-        icon: "Database", // Icon name for Services.tsx
+        icon: "./SCX41.webp",// Icon name for Services.tsx
         images: [
             "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
             "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
@@ -78,7 +78,7 @@ export const products = {
         title: "Cloud Smart Mobile Application",
         description: "Companion app for seamless integration",
         name: "Contact for Pricing",
-        icon: "Smartphone", // Icon name for Services.tsx
+        icon: "./SCX41.webp", // Icon name for Services.tsx
         images: [
             "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
             "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",

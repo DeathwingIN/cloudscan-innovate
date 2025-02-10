@@ -37,7 +37,7 @@ const Hero = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight md:leading-normal"
+                    className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight md:leading-normal"
                 >
                   Smarter Scanning Faster Operations
                   <span className="text-primary"> Zero Errors</span>
@@ -47,7 +47,7 @@ const Hero = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8"
+                    className="text-lg md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8"
                 >
                   Supercharge your business with Cloud Smart’s barcode and mobile scanning solutions. Whether you’re managing
                   inventory, tracking production, or streamlining
@@ -60,18 +60,18 @@ const Hero = () => {
                     viewport={{ once: true }}
                     className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
                 >
-                  <Link to="/contact">
-                    <Button
-                        size="lg"
-                        className="group transform transition-all hover:scale-105"
-                    >
-                      Explore Products
-                      <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-                    </Button>
-                  </Link>
+                  {/*<Link to="/contact">*/}
+                  {/*  <Button*/}
+                  {/*      size="lg"*/}
+                  {/*      className="group transform transition-all hover:scale-105"*/}
+                  {/*  >*/}
+                  {/*    Explore Products*/}
+                  {/*    <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />*/}
+                  {/*  </Button>*/}
+                  {/*</Link>*/}
                   <Button
                       size="lg"
-                      variant="outline"
+                     
                       className="group transform transition-all border-0 hover:scale-105"
                   >
                     Watch Demo
@@ -82,34 +82,40 @@ const Hero = () => {
               {/* Video Container */}
               <div className="hidden md:flex flex-1 relative">
                 <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true }}
+                    initial={{scale: 0.8, opacity: 0}}
+                    whileInView={{scale: 1, opacity: 1}}
+                    transition={{duration: 0.8, ease: "easeOut"}}
+                    viewport={{once: true}}
                     className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl animate-float shadow-lg overflow-hidden"
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    {/* Video Embed */}
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        poster="/placeholder.svg" // Path to a fallback image
-                        className="w-full h-full object-cover rounded-2xl"
-                    >
-                      <source src={"https://www.youtube.com/watch?v=uLsfAou6C1U"}  />
-                      Your browser does not support the video tag.
-                    </video>
-                    {/*<img src="/placeholder.svg" alt=""/>*/}
-                  </div>
+                  {/*<div className="absolute inset-0 flex items-center justify-center">*/}
+                  {/*  /!* Video Embed *!/*/}
+                  {/*  <video*/}
+                  {/*      autoPlay*/}
+                  {/*      loop*/}
+                  {/*      muted*/}
+                  {/*      playsInline*/}
+                  {/*      poster="/placeholder.svg" // Path to a fallback image*/}
+                  {/*      className="w-full h-full object-cover rounded-2xl"*/}
+                  {/*  >*/}
+                  {/*    <source src={"https://www.youtube.com/watch?v=uLsfAou6C1U"}  />*/}
+                  {/*    Your browser does not support the video tag.*/}
+                  {/*  </video>*/}
+                  {/*  /!*<img src="/placeholder.svg" alt=""/>*!/*/}
+                  {/*</div>*/}
+                  <div className="absolute bg-center bg-cover bg-no-repeat  inset-0 flex  justify-center"
+                       style={{
+                         backgroundImage: "url(/hero2.gif)",
+                       }}
+
+                  ></div>
                 </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-  );
+);
 };
 
 export default Hero;
