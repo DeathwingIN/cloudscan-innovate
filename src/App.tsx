@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ContactUs from "./pages/ContactUs";
 import ProductPage from "./pages/ProductPage";
+import RequestForQuote from "./pages/RequestForQuote";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/products/:productId" element={<ProductPage />} />
+             <Route path="/request" element={<RequestForQuote />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
