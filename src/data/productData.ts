@@ -1,7 +1,7 @@
 // productData.ts
 export const products = {
     "smart-scanner-pro": {
-        title: "Mobile & Handheld Barcode Scanners",
+        title: "SCX41 Handheld Terminal",
         description: "The SCX41 is a high-performance handheld terminal designed for industrial applications, featuring a 4.0-inch HD screen," +
             " high-speed Octa-Core processor, and Android 10/13 OS. " +
             "It supports advanced barcode scanning, NFC, and seamless data collection to improve operational efficiency.",
@@ -39,7 +39,7 @@ export const products = {
         },
     },
     "scanner-lite": {
-        title: "Barcode Label Printing Solutions",
+        title: "SMT71i Handheld Terminal",
         description: "The SMT71i is a powerful, rugged mobile terminal with a 6-inch IPS display, Android 13 OS, and high-speed Cortex-A76 processor. " +
             "It offers superior barcode scanning, NFC, and UHF RFID for high-performance enterprise applications.",
         name: "SMT71i Handheld Terminal",
