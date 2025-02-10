@@ -137,7 +137,7 @@ const ProductPage = () => {
               <div className="space-y-8">
                 <div>
                   <h1 className="text-3xl font-bold text-primary mb-4">{product.title}</h1>
-                  <p className="text-2xl font-semibold pb-4">{product.name}</p>
+                  {/*<p className="text-2xl font-semibold pb-4">{product.name}</p>*/}
                   <p className="text-muted-foreground mb-6">{product.description}</p>
                 </div>
                 {/* Features */}
