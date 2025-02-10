@@ -47,7 +47,7 @@ const About = () => {
                   <p className="text-muted-foreground mb-8">
                       At Cloud Smart, we don’t just provide barcode solutions—we transform the way businesses operate.
                       Our mission is simple: eliminate inefficiencies, reduce errors, and power up productivity with cutting-edge scanning
-                      technology that seamlessly integrates into your existing ERP system.
+                      technology that seamlessly integrates into your existing ERP system.<br/>
                       With years of expertise in barcode automation and enterprise integration, we help companies across manufacturing,
                       warehousing, logistics, and retail work smarter, not harder.
 
