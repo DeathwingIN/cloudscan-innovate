@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -54,9 +55,9 @@ const Navbar = () => {
               <Link
                   to="/"
                   onClick={handleHomeClick} // Scroll to top on Home link click
-                  className="text-2xl font-bold text-primary tracking-wide transition-colors hover:text-primary/80"
+                  // className="text-2xl font-bold text-primary tracking-wide transition-colors hover:text-primary/80"
               >
-                CloudSmart
+                <img src="./logo.png" className="md:h-[40px] h-1/2 w-auto object-contain cursor-pointer" alt="Cloud Smart"/>
               </Link>
             </div>
 
@@ -79,7 +80,7 @@ const Navbar = () => {
                   onClick={() => handleScrollToSection("services")}
                   className="text-secondary hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
               >
-                Services
+                Products
               </button>
               <Link to="/contact">
                 <Button variant="default" className="transition-transform hover:scale-105">

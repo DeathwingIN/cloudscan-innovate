@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ChevronDown, ChevronUp, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Collapsible,
   CollapsibleContent,
@@ -140,13 +141,16 @@ const ProductPage = () => {
 
                 {/* Call to Action */}
                 <div className="space-y-4">
-                  <Button className="w-full" size="lg">
-                    Request Quote
-                  </Button>
-                  <Button variant="outline" className="w-full" size="lg">
-                    <MessageSquare className="mr-2 h-4 w-4" />
-                    Contact Sales
-                  </Button>
+
+                  <Link to="/contact">
+                    <Button variant="default" className="transition-transform hover:scale-105">
+                      Request Quote
+                    </Button>
+                  </Link>
+                  {/*<Button variant="outline" className="w-full" size="lg">*/}
+                  {/*  <MessageSquare className="mr-2 h-4 w-4" />*/}
+                  {/*  Contact Sales*/}
+                  {/*</Button>*/}
                 </div>
               </div>
             </div>
