@@ -1,15 +1,15 @@
+
 import React, { useState, useEffect } from "react";
- import Hero from "@/components/Hero";
-//import Hero from "@/components/Hero2";
+import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Industries from "@/components/Industries";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Index = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
 
-    // Show/hide scroll-to-top button based on scroll position
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 300) {
@@ -22,7 +22,6 @@ const Index = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Scroll to the top of the page
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -31,16 +30,12 @@ const Index = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white  relative">
-
-
-
-            {/* Main Content */}
+        <div className="min-h-screen bg-white relative">
             <Hero/>
             <About/>
+            <Industries />
             <Services/>
 
-            {/* Scroll-to-Top Button */}
             {showScrollButton && (
                 <motion.button
                     initial={{opacity: 0}}
@@ -52,16 +47,7 @@ const Index = () => {
                     <ArrowUp size={20}/>
                 </motion.button>
             )}
-
-
         </div>
-
-    // <div>
-    //     <Hero/>
-    //     <About/>
-    //     <Services/>
-    // </div>
-
     );
 };
 
