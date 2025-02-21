@@ -90,13 +90,14 @@ const Industries = () => {
                             />
 
                             {/* Non-Hover Content (Displays by Default) */}
-                            <div className="absolute inset-0 p-4 flex flex-col items-center justify-center bg-primary/10 backdrop-blur group-hover:opacity-0 transition-opacity duration-300">
-                              <h4 className="font-semibold mb-2">
-                                {industry.emoji} {industry.title}
+                            <div className="absolute inset-0 p-4 flex flex-col items-center justify-center bg-black/50 backdrop-blur  group-hover:opacity-0 transition-opacity duration-300 text-white">
+                              <h4 className="font-semibold mb-2 text-[30px]  ">
+                                {industry.emoji}
                               </h4>
-                              <p className="text-sm text-center mb-4">
-                                {industry.shortDescription}
+                              <p className="text-xl text-center mb-4">
+                                {industry.title}
                               </p>
+
                             </div>
 
                             {/* Hover Overlay (Displays on Hover) */}
@@ -104,7 +105,7 @@ const Industries = () => {
                                 initial={{ opacity: 0 }}
                                 whileHover={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
-                                className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center p-4 text-white"
+                                className="absolute inset-0 bg-primary/50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center p-4 text-white"
                             >
                               <h4 className="text-lg font-semibold mb-2">
                                 {industry.title}
@@ -112,7 +113,7 @@ const Industries = () => {
                               <p className="text-sm text-center mb-4">
                                 {industry.description}
                               </p>
-                              <Button variant="outline" className="text-white border-white hover:bg-white hover:text-primary">
+                              <Button className="border-white">
                                 Learn More
                               </Button>
                             </motion.div>
