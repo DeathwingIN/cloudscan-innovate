@@ -73,6 +73,9 @@ const Hero = () => {
                       size="lg"
                      
                       className="group transform transition-all border-0 hover:scale-105"
+                        onClick={() => {
+                            window.open("https://www.youtube.com/watch?v=uLsfAou6C1U");
+                        }}
                   >
                     Watch Demo
                   </Button>

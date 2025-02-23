@@ -47,7 +47,7 @@ const Industries = () => {
                 transition={{ duration: 0.6 }}
                 className="text-3xl md:text-4xl font-bold text-secondary mb-4"
             >
-              Industries We Serve
+              Tailored Solutions for Every Industry
             </motion.h2>
             <motion.p
                 initial={{ opacity: 0, y: -20 }}
@@ -55,7 +55,7 @@ const Industries = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-muted-foreground max-w-2xl mx-auto"
             >
-              Tailored Solutions for Your Sector
+              Empower your business with fast, accurate, and reliable CloudSmart solutions designed to streamline workflows, reduce errors, and boost efficiency.
             </motion.p>
           </div>
           <Carousel
@@ -105,7 +105,7 @@ const Industries = () => {
                                 initial={{ opacity: 0 }}
                                 whileHover={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
-                                className="absolute inset-0 bg-primary/50 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center p-4 text-white"
+                                className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center p-4 text-white"
                             >
                               <h4 className="text-lg font-semibold mb-2">
                                 {industry.title}
@@ -124,9 +124,9 @@ const Industries = () => {
                   </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="hidden md:block">
-              <CarouselPrevious className="-left-16" />
-              <CarouselNext className="-right-16" />
+            <div className="hidden md:block ">
+              <CarouselPrevious className="-left-16 hover:bg-primary" />
+              <CarouselNext className="-right-16 hover:bg-primary" />
             </div>
           </Carousel>
         </div>
