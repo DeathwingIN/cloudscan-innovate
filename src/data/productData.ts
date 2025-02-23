@@ -6,11 +6,11 @@ export const products = {
             " high-speed Octa-Core processor, and Android 10/13 OS. " +
             "It supports advanced barcode scanning, NFC, and seamless data collection to improve operational efficiency.",
         name: "SCX41 Handheld Terminal",
-        icon: "./MobileType/Mob02.jpg",
+        icon: "./HandHeld/H01.jpg",
         images: [
-            "/MobileType/Mob01.jpg",
-            "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-            "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+            "/HandHeld/H02.jpg",
+            "/HandHeld/H03.jpg",
+            "/HandHeld/H04.jpg",
         ],
         features: [
             "Lightning-fast scanning with high-precision accuracy",
@@ -43,11 +43,13 @@ export const products = {
         description: "The SMT71i is a powerful, rugged mobile terminal with a 6-inch IPS display, Android 13 OS, and high-speed Cortex-A76 processor. " +
             "It offers superior barcode scanning, NFC, and UHF RFID for high-performance enterprise applications.",
         name: "SMT71i Handheld Terminal",
-        icon: "./SCX41.webp",// Icon name for Services.tsx
+        icon: "./MobileType/Mob01.jpg",
         images: [
-            "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-            "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
-            "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+            "/MobileType/Mob06.jpg",
+            "/MobileType/Mob03.jpg",
+            "/MobileType/Mob04.jpg",
+            // "/MobileType/Mob07.jpg",
+            // "/MobileType/Mob08.jpg",
         ],
         features: [
             "Customizable label printing for every industry need",

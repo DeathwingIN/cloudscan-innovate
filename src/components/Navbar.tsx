@@ -77,11 +77,18 @@ const Navbar = () => {
                 About
               </button>
               <button
+                  onClick={() => handleScrollToSection("industries")}
+                  className="text-secondary hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
+              >
+                Industries
+              </button>
+              <button
                   onClick={() => handleScrollToSection("services")}
                   className="text-secondary hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
               >
                 Products
               </button>
+
               <Link to="/contact">
                 <Button variant="default" className="transition-transform hover:scale-105">
                   Contact Us

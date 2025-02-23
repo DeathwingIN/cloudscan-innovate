@@ -1,7 +1,7 @@
 // src/pages/IndustryDetail.tsx
 import { motion } from 'framer-motion';
 import { industries } from '@/data/IndustryData';
-import { useParams } from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, AlertTriangle, CheckCircle, Cog } from 'lucide-react';
 
@@ -121,13 +121,21 @@ const IndustryDetail = () => {
                 <p className="text-lg text-white max-w-2xl mx-auto mb-8">
                     Discover how our solutions can help you overcome challenges and achieve your goals.
                 </p>
-                <Button
-                    variant="default"
-                    className="group transform transition-transform  rounded-full px-8 py-5 text-lg font-semibold bg-white text-primary hover:text-white"
+
+                <Link
+                    to="/contact"
                 >
-                    Schedule a Demo
-                    <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300 hover:text-white" />
-                </Button>
+                    <Button
+                        variant="default"
+                        className="group transform transition-transform  rounded-full px-8 py-5 text-lg font-semibold bg-white text-primary hover:text-white"
+
+                    >
+                        Schedule a Demo
+                        <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300 hover:text-white" />
+                    </Button>
+                </Link>
+
+
             </motion.div>
         </motion.section>
     );

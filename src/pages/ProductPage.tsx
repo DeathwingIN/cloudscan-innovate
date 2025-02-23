@@ -85,6 +85,7 @@ const ProductPage = () => {
                     onClick={() => setIsFullScreenModalOpen(true)} // Open full-screen modal on mobile
                 >
                   <img
+
                       src={product.images[selectedImage]}
                       alt={`${product.title} main view`}
                       className="w-full h-full object-cover"
