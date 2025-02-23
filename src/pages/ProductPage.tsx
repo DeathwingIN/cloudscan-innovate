@@ -85,6 +85,7 @@ const ProductPage = () => {
                     onClick={() => setIsFullScreenModalOpen(true)} // Open full-screen modal on mobile
                 >
                   <img
+
                       src={product.images[selectedImage]}
                       alt={`${product.title} main view`}
                       className="w-full h-full object-cover"
@@ -169,11 +170,11 @@ const ProductPage = () => {
                 {/* Call to Action */}
                 <div className="space-y-4">
                   <Link
-                      to="/request"
+                      to="/contact"
                       state={{ product: product.title }}
                   >
                     <Button variant="default" className="transition-transform hover:scale-105">
-                      Request Quote
+                      Get Supported
                     </Button>
                   </Link>
                 </div>
