@@ -130,7 +130,7 @@ const IndustryDetail = () => {
                         className="group transform transition-transform  rounded-full px-8 py-5 text-lg font-semibold bg-white text-primary hover:text-white"
 
                     >
-                        Schedule a Demo
+                        Get Support
                         <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform duration-300 hover:text-white" />
                     </Button>
                 </Link>

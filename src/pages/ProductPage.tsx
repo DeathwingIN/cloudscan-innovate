@@ -174,7 +174,7 @@ const ProductPage = () => {
                       state={{ product: product.title }}
                   >
                     <Button variant="default" className="transition-transform hover:scale-105">
-                      Get Supported
+                      Get Support
                     </Button>
                   </Link>
                 </div>
