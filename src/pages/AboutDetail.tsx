@@ -14,7 +14,7 @@ const AboutDetail = () => {
                 <motion.h1
                     initial={{opacity: 0, y: 50}}
                     animate={{opacity: 1, y: 0}}
-                    className="text-5xl font-bold text-center mb-5 pt-10  "
+                    className="text-5xl font-bold text-center mb-5 mt-0 md:mt-5  "
                 >
                     Revolutionizing Business Connections
 
@@ -62,14 +62,14 @@ const FeatureCard = ({feature, index}) => {
 
                     <div className="relative h-10 mb-6 rounded-2xl overflow-hidden ">
 
-                        <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-primary ">
+                        <h3 className="absolute bottom-4 left-4 md:text-2xl text-xl font-bold text-primary ">
                             {feature.title}
                         </h3>
                     </div>
 
                     {/* Tab Navigation */}
                     <div className="flex gap-2 mb-4">
-                        {['benefits', 'industries', 'how'].map((tab) => (
+                        {['benefits', 'Use Cases', 'how'].map((tab) => (
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
@@ -96,10 +96,10 @@ const FeatureCard = ({feature, index}) => {
                         </div>
                     )}
 
-                    {activeTab === 'industries' && (
-                        <div className="grid grid-cols-2 gap-3">
+                    {activeTab === 'Use Cases' && (
+                        <div className="md:grid  grid-cols-2 gap-3">
                             {feature.industries.map((industry) => (
-                                <div key={industry.name} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
+                                <div key={industry.name} className="flex items-center  gap-2 p-3 bg-gray-50 rounded-lg">
                                     <span className="text-2xl">{industry.icon}</span>
                                     <div>
                                         <p className="font-medium">{industry.name}</p>

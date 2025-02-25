@@ -15,15 +15,15 @@ const About = () => {
             {/*Animated background*/}
 
             <motion.div
-                animate={{
-                    rotate: 360,
-                    backgroundPosition: ['0% 0%', '100% 100%']
-                }}
-                transition={{
-                    duration: 40,
-                    repeat: Infinity,
-                    ease: "linear"
-                }}
+                // animate={{
+                //     rotate: 90,
+                //     backgroundPosition: ['0% 0%', '100% 100%']
+                // }}
+                // transition={{
+                //     duration: 40,
+                //     repeat: Infinity,
+                //     ease: "linear"
+                // }}
                 className="absolute -top-1/2 left-1/2 w-[200%] aspect-square rounded-full"
                 style={{
                     background: `
@@ -76,44 +76,44 @@ const About = () => {
                         </motion.div>
                     </motion.div>
 
-                    {/* 3D Sphere Section */}
-                    <motion.div
-                        initial={{scale: 0.8, opacity: 0}}
-                        animate={{scale: 1, opacity: 1}}
-                        className="relative h-96 flex items-center justify-center"
-                    >
-                        {/* Rotating Sphere */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <motion.div
-                                animate={{rotateY: 360}}
-                                transition={{duration: 25, repeat: Infinity, ease: "linear"}}
-                                className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-2xl"
-                            />
-                        </div>
+                    {/*/!* 3D Sphere Section *!/*/}
+                    {/*<motion.div*/}
+                    {/*    initial={{scale: 0.8, opacity: 0}}*/}
+                    {/*    animate={{scale: 1, opacity: 1}}*/}
+                    {/*    className="relative h-96 flex items-center justify-center"*/}
+                    {/*>*/}
+                        {/*/!* Rotating Sphere *!/*/}
+                    {/*    /!*<div className="absolute inset-0 flex items-center justify-center">*!/*/}
+                    {/*    /!*    <motion.div*!/*/}
+                    {/*    /!*        animate={{rotateY: 360}}*!/*/}
+                    {/*    /!*        transition={{duration: 25, repeat: Infinity, ease: "linear"}}*!/*/}
+                    {/*    /!*        className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-2xl"*!/*/}
+                    {/*    /!*    />*!/*/}
+                    {/*    /!*</div>*!/*/}
 
-                        {/* Floating Cards */}
-                        {features.map((feature, index) => (
-                            <motion.div
-                                key={feature}
-                                initial={{scale: 0}}
-                                animate={{scale: 1}}
-                                transition={{
-                                    delay: index * 0.3,
-                                    type: "spring",
-                                    stiffness: 100
-                                }}
-                                className="absolute bg-white p-6 rounded-2xl shadow-xl cursor-pointer"
-                                style={{
-                                    ...getFloatingPosition(index),
-                                    width: '200px'
-                                }}
-                                whileHover={{scale: 1.05}}
-                            >
-                                <CheckCircle className="text-blue-600 mb-3"/>
-                                <h3 className="font-semibold text-gray-800">{feature}</h3>
-                            </motion.div>
-                        ))}
-                    </motion.div>
+                        {/*/!* Floating Cards *!/*/}
+                    {/*    /!*{features.map((feature, index) => (*!/*/}
+                    {/*    /!*    <motion.div*!/*/}
+                    {/*    /!*        key={feature}*!/*/}
+                    {/*    /!*        initial={{scale: 0}}*!/*/}
+                    {/*    /!*        animate={{scale: 1}}*!/*/}
+                    {/*    /!*        transition={{*!/*/}
+                    {/*    /!*            delay: index * 0.3,*!/*/}
+                    {/*    /!*            type: "spring",*!/*/}
+                    {/*    /!*            stiffness: 100*!/*/}
+                    {/*    /!*        }}*!/*/}
+                    {/*    /!*        className="absolute bg-white p-6 rounded-2xl shadow-xl "*!/*/}
+                    {/*    /!*        style={{*!/*/}
+                    {/*    /!*            ...getFloatingPosition(index),*!/*/}
+                    {/*    /!*            width: '200px'*!/*/}
+                    {/*    /!*        }}*!/*/}
+                    {/*    /!*        whileHover={{scale: 1.05}}*!/*/}
+                    {/*    /!*    >*!/*/}
+                    {/*    /!*        <CheckCircle className="text-blue-600 mb-3"/>*!/*/}
+                    {/*    /!*        <h3 className="font-semibold text-gray-800">{feature}</h3>*!/*/}
+                    {/*    /!*    </motion.div>*!/*/}
+                    {/*    /!*))}*!/*/}
+                    {/*</motion.div>*/}
                 </div>
             </div>
         </section>
