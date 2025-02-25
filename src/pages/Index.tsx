@@ -32,8 +32,9 @@ const Index = () => {
     return (
         <div className="min-h-screen bg-white relative">
             <Hero/>
-            <About/>
+
             <Industries />
+            <About/>
             <Services/>
 
             {showScrollButton && (
