@@ -48,14 +48,21 @@ const FeatureCard = ({feature, index}) => {
             <Card className="h-full p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow">
                 <div className="flex flex-col h-full">
                     {/* Image Header */}
-                    <div className="relative h-[300px] mb-6 rounded-2xl overflow-hidden">
-                        <img
-                            src={feature.image}
-                            alt={feature.title}
-                            className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                        <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">
+                    {/*<div className="relative h-[300px] mb-6 rounded-2xl overflow-hidden">*/}
+                    {/*    <img*/}
+                    {/*        src={feature.image}*/}
+                    {/*        alt={feature.title}*/}
+                    {/*        className="w-full h-full object-cover"*/}
+                    {/*    />*/}
+                    {/*    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />*/}
+                    {/*    <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">*/}
+                    {/*        {feature.title}*/}
+                    {/*    </h3>*/}
+                    {/*</div>*/}
+
+                    <div className="relative h-10 mb-6 rounded-2xl overflow-hidden ">
+
+                        <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-primary ">
                             {feature.title}
                         </h3>
                     </div>
