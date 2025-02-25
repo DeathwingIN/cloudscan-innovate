@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import Hero from "@/components/Hero";
+import Hero2 from "@/components/Hero2";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
@@ -31,10 +32,11 @@ const Index = () => {
 
     return (
         <div className="min-h-screen bg-white relative">
-            <Hero/>
-
-            <Industries />
+            {/*<Hero/>*/}
+            <Hero2/>
             <About/>
+            <Industries />
+
             <Services/>
 
             {showScrollButton && (

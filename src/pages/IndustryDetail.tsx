@@ -40,14 +40,14 @@ const IndustryDetail = () => {
             {/* Hero Section */}
             <motion.div
                 variants={itemVariants}
-                className="relative h-[400px] bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center overflow-hidden"
+                className="relative h-[400px] bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center overflow-hidden "
             >
                 <div className="absolute inset-0 bg-opacity-50 bg-black"></div>
                 <div className="z-10 text-center space-y-4">
-                    <h1 className="text-6xl font-bold text-white tracking-tight pt-5">
+                    <h1 className="md:text-6xl  text-4xl font-bold text-white tracking-tight md:pt-5 pt-20">
                         {industry.title}
                     </h1>
-                    <p className="text-xl text-white max-w-5xl mx-auto px-5 ">
+                    <p className="md:text-xl  text-white max-w-5xl mx-auto px-5 ">
                         {industry.description2}
                     </p>
                 </div>
@@ -115,8 +115,8 @@ const IndustryDetail = () => {
                 variants={itemVariants}
                 className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 py-16 text-center"
             >
-                <h2 className="text-4xl font-bold text-white mb-4">
-                    Ready to Transform Your Business?
+                <h2 className="md:text-5xl  text-4xl font-bold text-white mb-4 px-5">
+                    {industry.description03}
                 </h2>
                 <p className="text-lg text-white max-w-2xl mx-auto mb-8">
                     Discover how our solutions can help you overcome challenges and achieve your goals.

@@ -2,7 +2,7 @@ export const aboutHero = {
     title: "Smarter Solutions. Limitless Possibilities.",
     subtitle: "Bringing Intelligence to Every Scan",
     description: "The future of business isn’t just digital—it’s intelligent. At Cloud Smart, we don’t just keep up with innovation—we drive it forward. We empower businesses with cutting-edge barcode and mobile solutions that eliminate inefficiencies, enhance accuracy, and automate workflows—giving you total control over your operations.",
-    cta: "Experience the Cloud Smart Advantage"
+    cta: "Experience the Cloud Smart "
 };
 
 export const aboutFeatures = [
@@ -23,7 +23,7 @@ export const aboutFeatures = [
             { icon: "🛒", name: "Retail", description: "Keep shelves stocked and prevent inventory mismatches." },
             { icon: "🚚", name: "Logistics", description: "Ensure precise shipment tracking and order accuracy." }
         ],
-        howItWorks: "Eliminate manual work and reduce errors through seamless integration with Microsoft Dynamics...",
+        howItWorks: "Eliminate manual work, reduce errors, and gain complete visibility by seamlessly integrating barcode scanning with Microsoft Dynamics 365 Business Central.",
     },
 
     // New Visibility & Tracking Feature
@@ -68,7 +68,7 @@ export const aboutFeatures = [
 
     // New Support Feature
     {
-        title: "24/7 Expert Support",
+        title: "24x7  Customer  Support",
         cta: "Get Expert Support",
         image: "/support-team.svg",
         benefits: [

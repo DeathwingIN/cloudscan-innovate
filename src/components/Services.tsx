@@ -51,6 +51,9 @@ const Services = () => {
                       }}
                       transition={{duration: 0.6}}
                       className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+
                   >
                     <div className="flex flex-col justify-between h-full">
                         <div>
