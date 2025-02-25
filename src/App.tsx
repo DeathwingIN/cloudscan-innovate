@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ContactUs from "./pages/ContactUs";
+import AboutDetail from "./pages/AboutDetail";
 import ProductPage from "./pages/ProductPage";
 import RequestForQuote from "./pages/RequestForQuote";
 import Footer from "@/components/Footer";
@@ -53,6 +54,8 @@ const App = () => (
 
                 {/* Contact Page */}
                 <Route path="/contact" element={<ContactUs />} />
+
+                <Route path="/about-detail" element={<AboutDetail />} />
 
                 {/* Products Page */}
                 <Route path="/products/:productId" element={<ProductPage />} />
