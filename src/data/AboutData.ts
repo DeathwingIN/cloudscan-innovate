@@ -18,10 +18,10 @@ export const aboutFeatures = [
             "Custom Workflows – Tailor the system to fit your business processes for maximum efficiency."
         ],
         industries: [
-            { icon: "🏭", name: "Manufacturing", description: "Sync production orders" },
-            { icon: "📦", name: "Warehousing", description: "Optimize stock management" },
-            { icon: "🛒", name: "Retail", description: "Prevent inventory mismatches" },
-            { icon: "🚚", name: "Logistics", description: "Ensure precise tracking" }
+            { icon: "🏭", name: "Manufacturing", description: "Sync production orders, track materials, and reduce waste." },
+            { icon: "📦", name: "Warehousing", description: "Optimize stock management with automated updates." },
+            { icon: "🛒", name: "Retail", description: "Keep shelves stocked and prevent inventory mismatches." },
+            { icon: "🚚", name: "Logistics", description: "Ensure precise shipment tracking and order accuracy." }
         ],
         howItWorks: "Eliminate manual work and reduce errors through seamless integration with Microsoft Dynamics...",
     },
