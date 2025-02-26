@@ -80,10 +80,10 @@ const Navbar = () => {
                 About
               </button>
 
-              {/* Industries Dropdown (route navigation) */}
+              {/* Industries Dropdown */}
               <div className="relative group">
                 <button
-                    onClick={() => setActiveDropdown(prev => prev === 'industries' ? null : 'industries')}
+                    onClick={() => handleScrollToSection("industries")}
                     className="flex items-center text-secondary hover:text-primary transition-all duration-300 ease-in-out"
                 >
                   Industries <ChevronDown size={16} className="ml-1 transition-transform group-hover:rotate-180" />
@@ -92,7 +92,7 @@ const Navbar = () => {
                   {industries.map((industry) => (
                       <button
                           key={industry.id}
-                          onClick={() => handleNavigation(`/industries/${industry.id}`)} // Route navigation <button class="citation-flag" data-index="6">
+                          onClick={() => handleNavigation(`/industries/${industry.id}`)} // Route navigation
                           className="block w-full text-left px-4 py-2 text-secondary hover:bg-gray-100 transition-all duration-300"
                       >
                         {industry.name}
@@ -104,7 +104,7 @@ const Navbar = () => {
               {/* Products Dropdown (route navigation) */}
               <div className="relative group">
                 <button
-                    onClick={() => setActiveDropdown(prev => prev === 'products' ? null : 'products')}
+                    onClick={() => handleScrollToSection("services")}
                     className="flex items-center text-secondary hover:text-primary transition-all duration-300 ease-in-out"
                 >
                   Products <ChevronDown size={16} className="ml-1 transition-transform group-hover:rotate-180" />
