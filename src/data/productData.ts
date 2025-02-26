@@ -77,27 +77,31 @@ export const products = {
         },
     },
     "cloudsmart-app": {
-        title: "Cloud Smart Mobile Application",
-        description: "Companion app for seamless integration",
+        title: "Mobile Application",
+        description: "The Cloud Smart Mobile Application is a robust mobile solution designed to integrate seamlessly with Microsoft Dynamics 365 Business Central. Tailored for industries like manufacturing, warehousing, and logistics, this app streamlines inventory management, production tracking, and order fulfillment—ensuring accuracy, efficiency, and real-time data synchronization.",
         name: "Contact for Pricing",
-        icon: "./SCX41.webp", // Icon name for Services.tsx
+        icon: "/App/3.png", // Icon name for Services.tsx
         images: [
-            "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-            "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-            "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+            "/App/3.png",
+            "/App/2.png",
+            "/App/1.png",
         ],
         features: [
-            "Durable, ergonomic designs built for industrial & commercial use",
-            "Real-time tracking for inventory, production, and shipping",
-            "Intuitive, user-friendly interface for fast, error-free operations",
+            "Barcode Scanning & Validation: Scan supplier, pallet, and item barcodes to validate against purchase orders, production orders, and sales orders.",
+            "Automated Journal Creation: Automatically generate Consumption, Output, and Shipment Journals in Business Central for real-time updates.",
+            "Customizable Label Printing: Print barcode labels directly from the app, including Lot Numbers, Expiration Dates, and Item Descriptions.",
+            "Configurable Quantity Management: Adjust pallet quantities, expiration dates, and lot details with ease.",
         ],
         specifications: {
-            "Platform": "iOS & Android",
-            "Cloud Storage": "Unlimited",
-            "Updates": "Automatic",
-            "Security": "Enterprise-grade Encryption",
-            "Integration": "Microsoft Business Central API",
-            "Support": "24/7 Technical Support",
+            'Core Modules': {
+                Receive: "Streamline goods receiving, validate supplier barcodes, and post Goods Receipt Notes directly to Business Central.",
+                Consumption: "Track raw material usage, manage component lines, and automate Consumption Journal creation.",
+                Output: "Record finished goods production, validate pallet details, and submit Output Journal Lines.",
+                Ship: "Fulfill sales orders, validate shipments, and post Sales Shipments directly from the app.",
+            },
+            'Supported Codes': "QR, Data Matrix, PDF417, MaxiCode, and more.",
+            Integration: "Fully integrated with Microsoft Dynamics 365 Business Central for real-time data sync.",
+            'Device Compatibility': "Optimized for rugged mobile scanners like the SMT71i, ensuring high performance in demanding environments.",
         },
     },
 

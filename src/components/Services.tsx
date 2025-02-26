@@ -61,7 +61,7 @@ const Services = () => {
                             {/*<div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">*/}
                             {/*    */}
                             {/*</div>*/}
-                            <img src={product.icon} alt={product.title} className="bg-primary/10 rounded-lg flex items-center justify-center mb-6"/>
+                            <img src={product.icon} alt={product.title} className=" max-h-72 bg-cover overflow-hidden rounded-lg flex items-center justify-center mb-6"/>
                             {/* Title */}
                             <h3 className="text-xl font-semibold text-secondary mb-4">
                                 {product.title}
