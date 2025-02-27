@@ -1,49 +1,51 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Close the mobile menu when the route changes
+
+  const industries = [
+    { id: "manufacturing", name: "Manufacturing" },
+    { id: "Warehousing", name: "Warehousing & Distribution" },
+    { id: "Retail", name: "Retail & E-Commerce" },
+    { id: "Healthcare", name: "Healthcare" },
+    { id: "Transportation", name: "Transportation & Logistics" },
+    { id: "Food", name: "Food & Beverage" },
+  ];
+
+  const products = [
+    { id: "smart-scanner-pro", name: "Handheld Scanners" },
+    { id: "scanner-lite", name: "Mobile Phone-Style Scanners" },
+    { id: "cloudsmart-app", name: "Mobile Application" },
+  ];
+
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
-  // Improved scroll to section handler
-  const handleScrollToSection = async (id: string) => {
-    if (location.pathname !== "/") {
-      // Navigate to home first
-      navigate("/");
-      // Wait for navigation to complete
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    } else {
-      // Already on home page, just scroll
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
     setIsOpen(false);
   };
 
-  // Handle Home link click
-  const handleHomeClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    setIsOpen(false); // Close mobile menu
+  const handleScrollToSection = async (id: string) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      await new Promise(resolve => setTimeout(resolve, 300));
+    }
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsOpen(false);
   };
 
   return (
@@ -51,43 +53,74 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <Link
-                  to="/"
-                  onClick={handleHomeClick} // Scroll to top on Home link click
-                  // className="text-2xl font-bold text-primary tracking-wide transition-colors hover:text-primary/80"
-              >
-                <img src="./logo.png" className="h-[40px]  w-auto object-contain cursor-pointer" alt="Cloud Smart"/>
-              </Link>
-            </div>
+            <Link to="/" className="flex items-center">
+              <img
+                  src="./logo.png"
+                  alt="Cloud Smart"
+                  className="h-[40px] w-auto object-contain cursor-pointer"
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              />
+            </Link>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-6">
               <Link
                   to="/"
-                  onClick={handleHomeClick} // Scroll to top on Home link click
                   className="text-secondary hover:text-primary transition-all duration-300 ease-in-out"
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 Home
               </Link>
+
+              {/* About Section (scroll) */}
               <button
                   onClick={() => handleScrollToSection("about")}
-                  className="text-secondary hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
+                  className="text-secondary hover:text-primary transition-all duration-300 ease-in-out"
               >
                 About
               </button>
-              <button
-                  onClick={() => handleScrollToSection("industries")}
-                  className="text-secondary hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
-              >
-                Industries
-              </button>
-              <button
-                  onClick={() => handleScrollToSection("services")}
-                  className="text-secondary hover:text-primary transition-all duration-300 ease-in-out cursor-pointer"
-              >
-                Products
-              </button>
+
+              {/* Industries Dropdown */}
+              <div className="relative group">
+                <button
+                    onClick={() => handleScrollToSection("industries")}
+                    className="flex items-center text-secondary hover:text-primary transition-all duration-300 ease-in-out"
+                >
+                  Industries <ChevronDown size={16} className="ml-1 transition-transform group-hover:rotate-180" />
+                </button>
+                <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                  {industries.map((industry) => (
+                      <button
+                          key={industry.id}
+                          onClick={() => handleNavigation(`/industries/${industry.id}`)} // Route navigation
+                          className="block w-full text-left px-4 py-2 text-secondary hover:bg-gray-100 transition-all duration-300"
+                      >
+                        {industry.name}
+                      </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Products Dropdown (route navigation) */}
+              <div className="relative group">
+                <button
+                    onClick={() => handleScrollToSection("services")}
+                    className="flex items-center text-secondary hover:text-primary transition-all duration-300 ease-in-out"
+                >
+                  Products <ChevronDown size={16} className="ml-1 transition-transform group-hover:rotate-180" />
+                </button>
+                <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                  {products.map((product) => (
+                      <button
+                          key={product.id}
+                          onClick={() => handleNavigation(`/products/${product.id}`)} // Route navigation <button class="citation-flag" data-index="6">
+                          className="block w-full text-left px-4 py-2 text-secondary hover:bg-gray-100 transition-all duration-300"
+                      >
+                        {product.name}
+                      </button>
+                  ))}
+                </div>
+              </div>
 
               <Link to="/contact">
                 <Button variant="default" className="transition-transform hover:scale-105">
@@ -119,23 +152,63 @@ const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
                   to="/"
-                  onClick={handleHomeClick} // Scroll to top on Home link click
                   className="block px-3 py-2 rounded-md text-secondary hover:text-primary hover:bg-gray-100 transition-all duration-300 ease-in-out"
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 Home
               </Link>
+
               <button
                   onClick={() => handleScrollToSection("about")}
                   className="w-full text-left block px-3 py-2 rounded-md text-secondary hover:text-primary hover:bg-gray-100 transition-all duration-300 ease-in-out"
               >
                 About
               </button>
-              <button
-                  onClick={() => handleScrollToSection("services")}
-                  className="w-full text-left block px-3 py-2 rounded-md text-secondary hover:text-primary hover:bg-gray-100 transition-all duration-300 ease-in-out"
-              >
-                Services
-              </button>
+
+              {/* Mobile Industries Accordion (route navigation) */}
+              <div className="border-t border-b border-gray-200">
+                <button
+                    onClick={() => setActiveDropdown(prev => prev === 'mobile-industries' ? null : 'mobile-industries')}
+                    className="w-full flex justify-between items-center px-3 py-2 text-secondary hover:bg-gray-100 transition-all duration-300"
+                >
+                  Industries
+                  {activeDropdown === 'mobile-industries' ? <ChevronUp /> : <ChevronDown />}
+                </button>
+                <div className={`${activeDropdown === 'mobile-industries' ? 'block' : 'hidden'} px-4 py-2 space-y-1`}>
+                  {industries.map((industry) => (
+                      <button
+                          key={industry.id}
+                          onClick={() => handleNavigation(`/industries/${industry.id}`)} // Route navigation <button class="citation-flag" data-index="6">
+                          className="block w-full text-left px-2 py-1 text-sm text-secondary hover:bg-gray-100 rounded transition-all duration-300"
+                      >
+                        {industry.name}
+                      </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile Products Accordion (route navigation) */}
+              <div className="border-t border-b border-gray-200">
+                <button
+                    onClick={() => setActiveDropdown(prev => prev === 'mobile-products' ? null : 'mobile-products')}
+                    className="w-full flex justify-between items-center px-3 py-2 text-secondary hover:bg-gray-100 transition-all duration-300"
+                >
+                  Products
+                  {activeDropdown === 'mobile-products' ? <ChevronUp /> : <ChevronDown />}
+                </button>
+                <div className={`${activeDropdown === 'mobile-products' ? 'block' : 'hidden'} px-4 py-2 space-y-1`}>
+                  {products.map((product) => (
+                      <button
+                          key={product.id}
+                          onClick={() => handleNavigation(`/products/${product.id}`)} // Route navigation <button class="citation-flag" data-index="6">
+                          className="block w-full text-left px-2 py-1 text-sm text-secondary hover:bg-gray-100 rounded transition-all duration-300"
+                      >
+                        {product.name}
+                      </button>
+                  ))}
+                </div>
+              </div>
+
               <Link to="/contact">
                 <Button
                     variant="default"

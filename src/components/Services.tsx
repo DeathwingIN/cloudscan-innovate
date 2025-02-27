@@ -6,7 +6,7 @@ import { products } from "../data/productData"; // Import shared product data
 
 const Services = () => {
   return (
-      <section id="services" className="py-20 bg-background">
+      <section id="services" className="py-20 bg-[rgba(44,170,226,0.1)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Title and Description */}
           <motion.div
@@ -61,7 +61,7 @@ const Services = () => {
                             {/*<div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">*/}
                             {/*    */}
                             {/*</div>*/}
-                            <img src={product.icon} alt={product.title} className="bg-primary/10 rounded-lg flex items-center justify-center mb-6"/>
+                            <img src={product.icon} alt={product.title} className=" max-h-72 bg-cover overflow-hidden rounded-lg flex items-center justify-center mb-6"/>
                             {/* Title */}
                             <h3 className="text-xl font-semibold text-secondary mb-4">
                                 {product.title}

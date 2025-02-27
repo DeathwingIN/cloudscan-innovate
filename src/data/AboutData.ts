@@ -2,7 +2,7 @@ export const aboutHero = {
     title: "Smarter Solutions. Limitless Possibilities.",
     subtitle: "Bringing Intelligence to Every Scan",
     description: "The future of business isn’t just digital—it’s intelligent. At Cloud Smart, we don’t just keep up with innovation—we drive it forward. We empower businesses with cutting-edge barcode and mobile solutions that eliminate inefficiencies, enhance accuracy, and automate workflows—giving you total control over your operations.",
-    cta: "Experience the Cloud Smart "
+    cta: "Cloud Smart where technology meets precision "
 };
 
 export const aboutFeatures = [

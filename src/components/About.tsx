@@ -9,31 +9,28 @@ const About = () => {
     const features = aboutFeatures.map(f => f.title);
 
     return (
-        <section className="relative py-28 bg-gradient-to-br from-blue-900 to-indigo-900 overflow-hidden" id="about"
+        <section className="relative py-28 bg-[rgba(44,170,226,0.8)] overflow-hidden" id="about"
 
         >
             {/*Animated background*/}
 
             <motion.div
-                // animate={{
-                //     rotate: 90,
-                //     backgroundPosition: ['0% 0%', '100% 100%']
-                // }}
-                // transition={{
-                //     duration: 40,
-                //     repeat: Infinity,
-                //     ease: "linear"
-                // }}
-                className="absolute -top-1/2 left-1/2 w-[200%] aspect-square rounded-full"
-                style={{
-                    background: `
-      linear-gradient(to right, rgba(59, 130, 246, 0.1), transparent),
-      url('https://plus.unsplash.com/premium_photo-1670249421324-232b654455d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
-    `,
-                    // backgroundSize: '150% 150%',
-                    backgroundBlendMode: 'soft-light'
-                }}
-            />
+                className="absolute -top-1/2 left-1/2 w-[200%] aspect-square rounded-full overflow-hidden"
+            >
+                {/* Video Background */}
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-1/2  object-right-bottom z-0"
+                >
+                    <source src="/V.mp4" type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+
+
+            </motion.div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -69,7 +66,7 @@ const About = () => {
                         >
                             <Button
                                 onClick={() => navigate('/about-detail')}
-                                className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-6 rounded-full text-lg font-semibold shadow-xl transform transition hover:scale-105"
+                                className="bg-white text-primary hover:bg-blue-50 px-8 py-6 rounded-full text-lg font-semibold shadow-xl transform transition hover:scale-105"
                             >
                                 {aboutHero.cta} →
                             </Button>
@@ -82,7 +79,7 @@ const About = () => {
                     {/*    animate={{scale: 1, opacity: 1}}*/}
                     {/*    className="relative h-96 flex items-center justify-center"*/}
                     {/*>*/}
-                        {/*/!* Rotating Sphere *!/*/}
+                    {/*/!* Rotating Sphere *!/*/}
                     {/*    /!*<div className="absolute inset-0 flex items-center justify-center">*!/*/}
                     {/*    /!*    <motion.div*!/*/}
                     {/*    /!*        animate={{rotateY: 360}}*!/*/}
@@ -91,7 +88,7 @@ const About = () => {
                     {/*    /!*    />*!/*/}
                     {/*    /!*</div>*!/*/}
 
-                        {/*/!* Floating Cards *!/*/}
+                    {/*/!* Floating Cards *!/*/}
                     {/*    /!*{features.map((feature, index) => (*!/*/}
                     {/*    /!*    <motion.div*!/*/}
                     {/*    /!*        key={feature}*!/*/}
