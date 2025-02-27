@@ -87,10 +87,10 @@ export const products = {
             "/App/1.png",
         ],
         features: [
-            "Barcode Scanning & Validation: Scan supplier, pallet, and item barcodes to validate against purchase orders, production orders, and sales orders.",
-            "Automated Journal Creation: Automatically generate Consumption, Output, and Shipment Journals in Business Central for real-time updates.",
-            "Customizable Label Printing: Print barcode labels directly from the app, including Lot Numbers, Expiration Dates, and Item Descriptions.",
-            "Configurable Quantity Management: Adjust pallet quantities, expiration dates, and lot details with ease.",
+            "Purchase Order Integration: Manage POs , scan barcodes, validate, print labels.",
+            "Production Tracking: Track materials, scan components, update orders live. ",
+            "Goods Management: Scan pallets, track lots, automate journals.",
+            "Sales Fulfillment: Scan orders, validate shipments, post to Business Central.",
         ],
         specifications: {
             'Core Modules': {
@@ -101,7 +101,7 @@ export const products = {
             },
             'Supported Codes':"QR, Data Matrix, PDF417, MaxiCode, and more.",
             Integration: "Fully integrated with Microsoft Dynamics 365 Business Central for real-time data sync.",
-            'Device Compatibility': "Optimized for rugged mobile scanners like the SMT71i, ensuring high performance in demanding environments.",
+
         },
     },
 
