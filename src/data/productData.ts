@@ -94,12 +94,12 @@ export const products = {
         ],
         specifications: {
             'Core Modules': {
-                Receive: "Streamline goods receiving, validate supplier barcodes, and post Goods Receipt Notes directly to Business Central.",
-                Consumption: "Track raw material usage, manage component lines, and automate Consumption Journal creation.",
-                Output: "Record finished goods production, validate pallet details, and submit Output Journal Lines.",
-                Ship: "Fulfill sales orders, validate shipments, and post Sales Shipments directly from the app.",
+                Receive:"Streamline goods receiving, validate supplier barcodes, and post Goods Receipt Notes directly to Business Central.",
+                Consumption:"Track raw material usage, manage component lines, and automate Consumption Journal creation.",
+                Output:"Record finished goods production, validate pallet details, and submit Output Journal Lines.",
+                Ship:"Fulfill sales orders, validate shipments, and post Sales Shipments directly from the app.",
             },
-            'Supported Codes': "QR, Data Matrix, PDF417, MaxiCode, and more.",
+            'Supported Codes':"QR, Data Matrix, PDF417, MaxiCode, and more.",
             Integration: "Fully integrated with Microsoft Dynamics 365 Business Central for real-time data sync.",
             'Device Compatibility': "Optimized for rugged mobile scanners like the SMT71i, ensuring high performance in demanding environments.",
         },

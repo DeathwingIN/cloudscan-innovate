@@ -22,7 +22,7 @@ export const industries: Record<string, Industry> = {
         emoji: "🏭",
         shortDescription: "Track. Optimize. Automate.",
         description: "Improve production efficiency with real-time material tracking, automated workflows, and seamless ERP integration.",
-        description2:"In manufacturing, precision, speed, and efficiency aren’t optional—they’re essential. Cloud Smart’s barcode and mobile solutions empower manufacturers to eliminate errors, reduce downtime, and achieve full supply chain visibility with seamless real-time tracking and automated workflows.",
+        description2:"In manufacturing, precision, speed, and efficiency aren’t optional—they’re essential. Cloud Smart’s barcode and mobile solutions empower manufacturers to eliminate errors, reduce downtime, and achieve full supply chain visibility with seamless real-time tracking and automated workflows that optimize production processes.",
         description03:"Revolutionize Production with Smart Automation",
         image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
         challenges: [

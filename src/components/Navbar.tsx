@@ -13,11 +13,11 @@ const Navbar = () => {
 
   const industries = [
     { id: "manufacturing", name: "Manufacturing" },
-    { id: "Warehousing", name: "Warehousing" },
-    { id: "Retail", name: "Retail" },
+    { id: "Warehousing", name: "Warehousing & Distribution" },
+    { id: "Retail", name: "Retail & E-Commerce" },
     { id: "Healthcare", name: "Healthcare" },
-    { id: "Transportation", name: "Transportation" },
-    { id: "Food", name: "Food" },
+    { id: "Transportation", name: "Transportation & Logistics" },
+    { id: "Food", name: "Food & Beverage" },
   ];
 
   const products = [
