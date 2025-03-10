@@ -31,7 +31,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col items-center ">
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -41,41 +41,7 @@ const ContactUs = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            {/* Contact Information */}
-            <div className="space-y-8 justify-between mb-10 ">
-              <h2 className="text-2xl text-start font-semibold mb-6">Get in Touch</h2>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Mail className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Email</h3>
-                    <p className="text-muted-foreground">contact@cloudsmart.com</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Phone className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <MapPin className="text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium">Location</h3>
-                    <p className="text-muted-foreground">123 Tech Street, Silicon Valley, CA</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Contact Form */}
+          <div className="grid  gap-0   ">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <Input
