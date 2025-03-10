@@ -13,23 +13,38 @@ const About = () => {
 
         >
             {/*Animated background*/}
-
+            {/*<motion.div*/}
+            {/*    className="absolute -top-1/2 left-1/4 w-[200%] aspect-square rounded-full overflow-hidden"*/}
+            {/*>*/}
+            {/*    /!* Video Background *!/*/}
+            {/*    <video*/}
+            {/*        autoPlay*/}
+            {/*        loop*/}
+            {/*        muted*/}
+            {/*        playsInline*/}
+            {/*        className="absolute inset-0 w-1/2  object-right-bottom z-0"*/}
+            {/*    >*/}
+            {/*        <source src="/V.mp4" type="video/mp4"/>*/}
+            {/*        Your browser does not support the video tag.*/}
+            {/*    </video>*/}
+            {/*</motion.div>*/}
             <motion.div
-                className="absolute -top-1/2 left-1/2 w-[200%] aspect-square rounded-full overflow-hidden"
+                className="absolute inset-0 w-full h-full" // Cover entire section
+                initial={{opacity: 0, scale: 1.2}}
+                animate={{opacity: 1, scale: 1}}
+                transition={{duration: 1, ease: "easeOut"}}
             >
-                {/* Video Background */}
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="absolute inset-0 w-1/2  object-right-bottom z-0"
+                    className="w-full h-full object-cover" // Full coverage with proper aspect ratio
                 >
                     <source src="/V.mp4" type="video/mp4"/>
-                    Your browser does not support the video tag.
+
                 </video>
-
-
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"/>
             </motion.div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -72,45 +87,6 @@ const About = () => {
                             </Button>
                         </motion.div>
                     </motion.div>
-
-                    {/*/!* 3D Sphere Section *!/*/}
-                    {/*<motion.div*/}
-                    {/*    initial={{scale: 0.8, opacity: 0}}*/}
-                    {/*    animate={{scale: 1, opacity: 1}}*/}
-                    {/*    className="relative h-96 flex items-center justify-center"*/}
-                    {/*>*/}
-                    {/*/!* Rotating Sphere *!/*/}
-                    {/*    /!*<div className="absolute inset-0 flex items-center justify-center">*!/*/}
-                    {/*    /!*    <motion.div*!/*/}
-                    {/*    /!*        animate={{rotateY: 360}}*!/*/}
-                    {/*    /!*        transition={{duration: 25, repeat: Infinity, ease: "linear"}}*!/*/}
-                    {/*    /!*        className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 shadow-2xl"*!/*/}
-                    {/*    /!*    />*!/*/}
-                    {/*    /!*</div>*!/*/}
-
-                    {/*/!* Floating Cards *!/*/}
-                    {/*    /!*{features.map((feature, index) => (*!/*/}
-                    {/*    /!*    <motion.div*!/*/}
-                    {/*    /!*        key={feature}*!/*/}
-                    {/*    /!*        initial={{scale: 0}}*!/*/}
-                    {/*    /!*        animate={{scale: 1}}*!/*/}
-                    {/*    /!*        transition={{*!/*/}
-                    {/*    /!*            delay: index * 0.3,*!/*/}
-                    {/*    /!*            type: "spring",*!/*/}
-                    {/*    /!*            stiffness: 100*!/*/}
-                    {/*    /!*        }}*!/*/}
-                    {/*    /!*        className="absolute bg-white p-6 rounded-2xl shadow-xl "*!/*/}
-                    {/*    /!*        style={{*!/*/}
-                    {/*    /!*            ...getFloatingPosition(index),*!/*/}
-                    {/*    /!*            width: '200px'*!/*/}
-                    {/*    /!*        }}*!/*/}
-                    {/*    /!*        whileHover={{scale: 1.05}}*!/*/}
-                    {/*    /!*    >*!/*/}
-                    {/*    /!*        <CheckCircle className="text-blue-600 mb-3"/>*!/*/}
-                    {/*    /!*        <h3 className="font-semibold text-gray-800">{feature}</h3>*!/*/}
-                    {/*    /!*    </motion.div>*!/*/}
-                    {/*    /!*))}*!/*/}
-                    {/*</motion.div>*/}
                 </div>
             </div>
         </section>
