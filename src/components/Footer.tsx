@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Linkedin, Mail } from "lucide-react";
+import { Facebook, Linkedin, Youtube,Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -36,23 +36,23 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook size={20} />
+                <Facebook size={20}/>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
+                <Instagram size={20}/>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
+                <Linkedin size={20}/>
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Mail size={20} />
+                <Youtube size={20}/>
               </a>
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} CloudSmart. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} CloudSmart. All rights reserved.</p>
         </div>
       </div>
     </footer>
