@@ -63,6 +63,24 @@ const PrivacyPolicy = () => {
                                 </ul>
                             </div>
 
+                            <div>
+                                <h3 className="font-medium mb-2">b.	Information Automatically Collected</h3>
+                                <ul className="list-disc list-inside space-y-2 pl-4">
+                                    <li>IP address, browser type, operating system</li>
+                                    <li>Device information and usage patterns</li>
+                                    <li>Cookies and similar tracking technologies</li>
+                                    <li>Log files, metadata, and analytics data</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3 className="font-medium mb-2">c.	Third-Party Information</h3>
+                                <ul className="list-disc list-inside space-y-2 pl-4">
+                                    <li>Information from integrated services (e.g., Google, Microsoft, or CRM platforms)</li>
+                                    <li>Publicly available business data</li>
+                                </ul>
+                            </div>
+
                             {/* Other subsections of Section 1 */}
                         </div>
                     </motion.section>
@@ -72,13 +90,13 @@ const PrivacyPolicy = () => {
                         variants={sectionVariants}
                         initial="initial"
                         whileInView="animate"
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{once: true, margin: "-100px"}}
+                        transition={{duration: 0.5, delay: 0.2}}
                         className="bg-secondary/10 p-6 rounded-lg shadow-sm"
                     >
                         <h2 className="text-2xl font-semibold text-primary mb-4">2. How We Use Your Information</h2>
                         <div className="space-y-6 text-muted-foreground">
-                            <p>We process your personal data under the following legal bases:</p>
+                        <p>We process your personal data under the following legal bases:</p>
                             <ul className="list-disc list-inside space-y-2 pl-4">
                                 <li>Your consent</li>
                                 <li>Performance of a contract</li>
@@ -172,10 +190,11 @@ const PrivacyPolicy = () => {
                                 <li>Withdrawal of consent</li>
                             </ul>
                             <p className="mt-4">
-                                To exercise these rights, please contact us at: {" "}
-                                <a href="mailto:[Insert contact email]" className="text-primary hover:underline">
-                                    [Insert contact email]
-                                </a>
+                                To exercise these rights, please contact us
+                                {/*at: {" "}*/}
+                                {/*<a href="mailto:[]" className="text-primary hover:underline">*/}
+                                {/*    [Insert contact email]*/}
+                                {/*</a>*/}
                             </p>
                         </div>
                     </motion.section>
