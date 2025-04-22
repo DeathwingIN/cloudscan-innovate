@@ -65,7 +65,7 @@ const App = () => (
                 <Route path="/request" element={<RequestForQuote />} />
 
                 {/* Request for Quote Page */}
-                <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
                 {/* 404 Not Found */}
                 <Route path="*" element={<NotFound />} />
