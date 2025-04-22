@@ -12,8 +12,9 @@ import ProductPage from "./pages/ProductPage";
 import RequestForQuote from "./pages/RequestForQuote";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import Industries from "@/components/Industries"; // Import the Industries page
-import IndustryDetail from "./pages/IndustryDetail"; // Import the IndustryDetail page
+import Industries from "@/components/Industries";
+import IndustryDetail from "./pages/IndustryDetail";
+import PrivacyPolicy from "./pages/PrivacyAndPolicy";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,9 @@ const App = () => (
 
                 {/* Request for Quote Page */}
                 <Route path="/request" element={<RequestForQuote />} />
+
+                {/* Request for Quote Page */}
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
                 {/* 404 Not Found */}
                 <Route path="*" element={<NotFound />} />
