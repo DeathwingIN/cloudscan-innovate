@@ -13,20 +13,20 @@ const slides = [
     {
         title: "Boost Efficiency with Smart Tech & Custom Solutions",
         subtitle: "Smarter Scanning. Faster Operations. Zero Errors",
-        image: "/slide1.jpg",
+        image: "3.png",
     },
     {
         title: "From SMEs to Giants, Devices to Data  We Scale with You",
-        image: "/slide1.jpg",
+        image: "3.png",
     },
     {
         title: "From Shop Floor to Boardroom  Seamless Integration with Microsoft Dynamics 365",
-        image: "/slide1.jpg",
+        image: "3.png",
     },
     {
         title: "Beyond Service. A Partnership.",
         subtitle: "We're with you at every step",
-        image: "/slide1.jpg",
+        image: "3.png",
     },
 ];
 
