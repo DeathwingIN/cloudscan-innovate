@@ -13,20 +13,20 @@ const slides = [
     {
         title: "Boost Efficiency with Smart Tech & Custom Solutions",
         subtitle: "Smarter Scanning. Faster Operations. Zero Errors",
-        image: "3.png",
+        image: "Hero0301.jpg",
     },
     {
         title: "From SMEs to Giants, Devices to Data  We Scale with You",
-        image: "3.png",
+        image: "Hero0302.jpg",
     },
     {
         title: "From Shop Floor to Boardroom  Seamless Integration with Microsoft Dynamics 365",
-        image: "3.png",
+        image: "Hero0303.jpg",
     },
     {
         title: "Beyond Service. A Partnership.",
         subtitle: "We're with you at every step",
-        image: "3.png",
+        image: "Hero0304.jpg",
     },
 ];
 
@@ -102,14 +102,14 @@ const Hero3 = () => {
             </div>
 
             {/* Background Image Container for Desktop */}
-            <div className="hidden md:block absolute right-0 top-0 h-full w-1/2 pt-20">
+            <div className="hidden md:block absolute right-0 top-1 h-full w-1/2 ">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeSlide}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.5}}
                         className="h-full w-full bg-cover bg-center"
                         style={{
                             backgroundImage: `url(${slides[activeSlide].image})`,
