@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
       <>
-        <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <nav className="fixed w-full bg-gray-50/75 backdrop-blur-md z-50 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
               <div className="flex items-center space-x-4">
@@ -75,7 +75,7 @@ const Navbar = () => {
                   <img
                       src="./logo.png"
                       alt="Cloud Smart"
-                      className="h-[40px] w-auto object-contain cursor-pointer"
+                      className="h-[30px] pl-1 w-auto object-contain cursor-pointer"
                       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   />
                 </Link>
