@@ -33,8 +33,6 @@ const About = () => {
     return (
         <section
             id="about"
-            // The section now has a simple background and still uses flexbox to center content.
-            // min-h-[50vh] makes it take up half the viewport height, but you can change it to min-h-screen for a full-page effect.
             className="flex items-center justify-center w-full min-h-[60vh] bg-gray-50"
         >
             {/* Content Container */}
