@@ -8,7 +8,8 @@ import Services from "@/components/Services";
 import Industries from "@/components/Industries";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
-import Hero4 from "@/components/Hero4.tsx";
+
+import Hero5 from "@/components/Hero5.tsx"; 
 
 const Index = () => {
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -37,7 +38,8 @@ const Index = () => {
             {/*<Hero/>*/}
             {/*<Hero2/>*/}
             {/*<Hero3/>*/}
-            <Hero4/>
+            {/* <Hero4/> */}
+            <Hero5/>
             <About/>
             <Industries />
 
