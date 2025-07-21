@@ -1,106 +1,71 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { aboutHero, aboutFeatures } from "@/data/AboutData";
 import { useNavigate } from "react-router-dom";
-import { CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const About = () => {
     const navigate = useNavigate();
-    const features = aboutFeatures.map(f => f.title);
+
+    // Animation variants for the container to orchestrate children animations
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3, // Time delay between each child animating in
+            },
+        },
+    };
+
+    // Animation variants for the text and button to fade in and move up
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut",
+            },
+        },
+    };
 
     return (
-        <section className="relative py-28 bg-[rgba(44,170,226,0.8)] overflow-hidden" id="about"
-
+        <section
+            id="about"
+            // The section now has a simple background and still uses flexbox to center content.
+            // min-h-[50vh] makes it take up half the viewport height, but you can change it to min-h-screen for a full-page effect.
+            className="flex items-center justify-center w-full min-h-[60vh] bg-gray-50"
         >
-            {/*Animated background*/}
-            {/*<motion.div*/}
-            {/*    className="absolute -top-1/2 left-1/4 w-[200%] aspect-square rounded-full overflow-hidden"*/}
-            {/*>*/}
-            {/*    /!* Video Background *!/*/}
-            {/*    <video*/}
-            {/*        autoPlay*/}
-            {/*        loop*/}
-            {/*        muted*/}
-            {/*        playsInline*/}
-            {/*        className="absolute inset-0 w-1/2  object-right-bottom z-0"*/}
-            {/*    >*/}
-            {/*        <source src="/V.mp4" type="video/mp4"/>*/}
-            {/*        Your browser does not support the video tag.*/}
-            {/*    </video>*/}
-            {/*</motion.div>*/}
+            {/* Content Container */}
             <motion.div
-                className="absolute inset-0 w-full h-full" // Cover entire section
-                initial={{opacity: 0, scale: 1.2}}
-                animate={{opacity: 1, scale: 1}}
-                transition={{duration: 1, ease: "easeOut"}}
+                className="text-center px-4"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
             >
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover" // Full coverage with proper aspect ratio
+                {/* Large Text - color changed to dark for readability */}
+                <motion.h1
+                    className="text-4xl font-extrabold tracking-tight text-gray-800 sm:text-5xl md:text-6xl"
+                    variants={itemVariants}
                 >
-                    <source src="/V.mp4" type="video/mp4"/>
+                    Cloud Smart where technology meets precision
+                </motion.h1>
 
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"/>
-            </motion.div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
-                    {/* Text Content */}
-                    <motion.div
-                        initial="hidden"
-                        animate="visible"
-                        variants={{
-                            hidden: {opacity: 0},
-                            visible: {
-                                opacity: 1,
-                                transition: {staggerChildren: 0.2}
-                            }
-                        }}
-                        className="space-y-8 text-white"
+                {/* Small Text & Redirect Button */}
+                <motion.div variants={itemVariants} className="mt-10">
+                    <Button
+                        onClick={() => navigate('/about-detail')}
+                        // Updated button style for a solid background.
+                        className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 bg-primary rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 group"
                     >
-                        <motion.h1
-                            variants={{hidden: {y: 30, opacity: 0}, visible: {y: 0, opacity: 1}}}
-                            className="text-5xl md:text-6xl font-bold leading-tight"
-                        >
-                            {aboutHero.title}
-                        </motion.h1>
-
-                        <motion.p
-                            variants={{hidden: {x: -30, opacity: 0}, visible: {x: 0, opacity: 1}}}
-                            className="text-xl text-blue-100"
-                        >
-                            {aboutHero.subtitle}
-                        </motion.p>
-
-                        <motion.div
-                            variants={{hidden: {scale: 0.9, opacity: 0}, visible: {scale: 1, opacity: 1}}}
-                        >
-                            <Button
-                                onClick={() => navigate('/about-detail')}
-                                className="bg-white text-primary hover:bg-blue-50 px-8 py-6 rounded-full text-lg font-semibold shadow-xl transform transition hover:scale-105"
-                            >
-                                {aboutHero.cta} →
-                            </Button>
-                        </motion.div>
-                    </motion.div>
-                </div>
-            </div>
+                        Discover the Cloud Smart advantage
+                        <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Button>
+                </motion.div>
+            </motion.div>
         </section>
     );
-};
-
-// Positioning helper
-const getFloatingPosition = (index: number) => {
-    const angles = [30, 150, 210, 330];
-    const radius = 160;
-    return {
-        x: radius * Math.cos((angles[index] * Math.PI) / 180),
-        y: radius * Math.sin((angles[index] * Math.PI) / 180)
-    };
 };
 
 export default About;
