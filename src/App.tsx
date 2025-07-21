@@ -11,18 +11,16 @@ import AboutDetail from "./pages/AboutDetail";
 import ProductPage from "./pages/ProductPage";
 import RequestForQuote from "./pages/RequestForQuote";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import Industries from "@/components/Industries";
+import Navbar from "@/components/Navbar"; // Your Navbar component
+import Industries from "@/components/Industries"; // This import seems duplicated, might be a typo if not used as a component directly here
 import IndustryDetail from "./pages/IndustryDetail";
 import PrivacyPolicy from "./pages/PrivacyAndPolicy";
 
 const queryClient = new QueryClient();
 
-// Improved ScrollToTop component with better scroll restoration
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
   useEffect(() => {
-    // Only scroll to top if there's no hash in the URL
     if (!hash) {
       window.scrollTo({
         top: 0,
@@ -34,48 +32,32 @@ const ScrollToTop = () => {
 };
 
 const App = () => (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <div className="flex flex-col">
-            <Navbar />
-            <ScrollToTop />
-            <main className="flex-grow">
-              <Routes>
-                {/* Home Page */}
-                <Route path="/" element={<Index />} />
-
-                {/* Industries Page */}
-                <Route path="/industries" element={<Industries />} />
-
-                {/* Industry Detail Page */}
-                <Route path="/industries/:industryId" element={<IndustryDetail />} />
-
-                {/* Contact Page */}
-                <Route path="/contact" element={<ContactUs />} />
-
-                <Route path="/about-detail" element={<AboutDetail />} />
-
-                {/* Products Page */}
-                <Route path="/products/:productId" element={<ProductPage />} />
-
-                {/* Request for Quote Page */}
-                <Route path="/request" element={<RequestForQuote />} />
-
-                {/* Request for Quote Page */}
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
-                {/* 404 Not Found */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <div className="flex flex-col">
+          <Navbar />
+          <ScrollToTop />
+          <main className="flex-grow "> 
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/industries/:industryId" element={<IndustryDetail />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/about-detail" element={<AboutDetail />} />
+              <Route path="/products/:productId" element={<ProductPage />} />
+              <Route path="/request" element={<RequestForQuote />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export default App;
