@@ -60,7 +60,7 @@ const Navbar = () => {
 
   return (
       <>
-        <nav className="fixed w-full bg-gray-50/75 backdrop-blur-md z-50 shadow-sm">
+        <nav className="fixed w-full bg-gray-50/90 backdrop-blur-md z-50 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
               <div className="flex items-center space-x-4">
@@ -81,7 +81,7 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              <div className="hidden md:flex items-center space-x-6">
+              <div className="hidden md:flex items-center space-x-14">
                 <Link
                     to="/"
                     className="text-secondary hover:text-primary transition-all duration-300 ease-in-out"
