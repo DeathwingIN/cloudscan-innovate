@@ -5,11 +5,11 @@ const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     const slides = [
-        { image: "Heo0501.png" },
-        { image: "Heo0502.png" },
-        { image: "Heo0503.png" },
-        { image: "Heo0504.png" },
-        { image: "Heo0505.png" },
+        { image: "Heo0501.svg" },
+        { image: "Heo0502.svg" },
+        { image: "Heo0503.svg" },
+        { image: "Heo0504.svg" },
+        { image: "Heo0505.svg" },
     ];
 
     useEffect(() => {
