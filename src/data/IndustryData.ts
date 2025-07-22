@@ -1,4 +1,9 @@
-// src/data/IndustryData.ts
+import manufacturingImage from '../../public/Industries/Manufacturing.jpg';
+import warehousingImage from '../../public/Industries/Warehousing.jpg';
+import retailImage from '../../public/Industries/Retail.jpg';
+import healthcareImage from '../../public/Industries/hospital.jpg';
+import transportationImage from '../../public/Industries/Transportation.jpg';
+import foodImage from '../../public/Industries/food.jpg';
 
 export interface Industry {
     id: string;
@@ -24,7 +29,7 @@ export const industries: Record<string, Industry> = {
         description: "Improve production efficiency with real-time material tracking, automated workflows, and seamless ERP integration.",
         description2:"In manufacturing, precision, speed, and efficiency aren’t optional—they’re essential. Cloud Smart’s barcode and mobile solutions empower manufacturers to eliminate errors, reduce downtime, and achieve full supply chain visibility with seamless real-time tracking and automated workflows that optimize production processes.",
         description03:"Revolutionize Production with Smart Automation",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        image: manufacturingImage,
         challenges: [
             "Manual tracking errors that cause production delays",
             "Inventory discrepancies leading to material shortages",
@@ -52,7 +57,7 @@ export const industries: Record<string, Industry> = {
         description: "Gain total inventory control, speed up order processing, and reduce stock discrepancies with barcode-driven automation.",
         description03:"Maximize Warehouse Efficiency & Reduce Errors",
         description2:"Warehouses operate in high-pressure, high-volume environments where errors cost time and money. Cloud Smart’s barcode-driven inventory solutions ensure every item is accounted for, properly stored, and quickly retrieved for faster fulfillment",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        image: warehousingImage,
         challenges: [
             "Slow and error-prone order picking and packing",
             "Overstocking or stock outs due to inaccurate inventory",
@@ -80,7 +85,7 @@ export const industries: Record<string, Industry> = {
         description: "Enhance inventory accuracy, prevent stock outs, and enable fast, hassle-free checkouts with cutting-edge barcode technology.",
         description2:"Retail and e-commerce businesses thrive on speed, accuracy, and customer satisfaction. Cloud Smart ensures real-time inventory tracking, seamless checkout experiences, and automated restocking, so your business never skips a beat.",
         description03:"Faster Checkouts, Smarter Stock Management",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        image: retailImage,
         challenges: [
             "Lost revenue from incorrect stock levels and stock outs",
             "Long checkout lines and frustrated customers",
@@ -108,7 +113,7 @@ export const industries: Record<string, Industry> = {
         description: "Ensure error-free patient care, track medical inventory, and maintain regulatory compliance with barcode-enabled safety.",
         description2:"In healthcare, accuracy saves lives. Cloud Smart ensures that medications, supplies, and patient data are tracked with 100% precision, reducing risks and improving care quality.",
         description03:"Enhancing Patient Safety with Accurate Data Tracking",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        image: healthcareImage,
         challenges: [
             "Medication errors caused by accidental mislabeling",
             "Lost or misplaced medical equipment leading to inefficiencies",
@@ -137,7 +142,7 @@ export const industries: Record<string, Industry> = {
         description: "From warehouse to doorstep, manage shipments, reduce delays, and improve traceability with barcode-powered logistics.",
         description2:"In logistics, speed and accuracy determine success. Cloud Smart’s solutions help companies streamline fleet management, track shipments in real-time, and eliminate delivery errors.",
         description03:"Real-Time Shipment Tracking & Delivery Optimization",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        image: transportationImage,
         challenges: [
             "Late deliveries & lost shipments causing customer dissatisfaction",
             "Inefficient package sorting & route planning leading to delays",
@@ -165,7 +170,7 @@ export const industries: Record<string, Industry> = {
         description: "Track expiration dates, manage perishable goods, and maintain food safety standards with barcode-enabled traceability.",
         description2:"The food and beverage industry demands precision, traceability, and strict compliance to ensure product safety and minimize waste. Cloud Smart helps businesses track inventory, manage expiration dates, and optimize supply chain efficiency.",
         description03:"Ensure Quality, Compliance, and Efficient Supply Chain Management",
-        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+        image: foodImage,
         challenges: [
             "Difficulty maintaining food safety compliance and traceability",
             "Expired or wasted inventory due to lack of visibility",
