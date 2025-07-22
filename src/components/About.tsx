@@ -33,7 +33,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="flex items-center justify-center w-full min-h-[60vh] bg-gray-50"
+            className="flex items-center justify-center w-full min-h-[40vh] bg-gray-50"
         >
             {/* Content Container */}
             <motion.div
@@ -44,10 +44,10 @@ const About = () => {
             >
                 {/* Large Text - color changed to dark for readability */}
                 <motion.h1
-                    className="text-4xl font-extrabold tracking-tight text-gray-800 sm:text-5xl md:text-6xl"
+                    className="text-4xl font-extrabold tracking-tight text-gray-800 sm:text-2xl md:text-5xl"
                     variants={itemVariants}
                 >
-                    Cloud Smart where technology meets precision
+                    Cloud Smart Where Technology Meets Precision
                 </motion.h1>
 
                 {/* Small Text & Redirect Button */}
@@ -55,9 +55,9 @@ const About = () => {
                     <Button
                         onClick={() => navigate('/about-detail')}
                         // Updated button style for a solid background.
-                        className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white transition-colors duration-300 bg-primary rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 group"
+                        className="inline-flex items-center px-8 py-4 text-lg font-semibold text-white  duration-300 bg-primary rounded-full shadow-lg transition-transform hover:scale-105  group"
                     >
-                        Discover the Cloud Smart advantage
+                        Explore how Cloud Smart powers your business
                         <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                     </Button>
                 </motion.div>
