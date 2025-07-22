@@ -55,7 +55,7 @@ const Industries = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-muted-foreground max-w-2xl mx-auto"
             >
-              Empower your business with fast, accurate, and reliable CloudSmart solutions designed to streamline workflows, reduce errors, and boost efficiency.
+              Empower your business with fast, accurate, and reliable Cloud Smart solutions designed to streamline workflows, reduce errors, and boost efficiency.
             </motion.p>
           </div>
           <Carousel

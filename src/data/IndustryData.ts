@@ -1,9 +1,12 @@
-import manufacturingImage from '../../public/Industries/Manufacturing.jpg';
-import warehousingImage from '../../public/Industries/Warehousing.jpg';
-import retailImage from '../../public/Industries/Retail.jpg';
-import healthcareImage from '../../public/Industries/hospital.jpg';
-import transportationImage from '../../public/Industries/Transportation.jpg';
-import foodImage from '../../public/Industries/food.jpg';
+import manufacturingImage from '../assets/Industries/Manufacturing.jpg';
+import warehousingImage from '../assets/Industries/Warehousing.jpg';
+import retailImage from '../assets/Industries/Retail.jpg';
+import healthcareImage from '../assets/Industries/hospital.jpg';
+import transportationImage from '../assets/Industries/Transportation.jpg';
+import foodImage from '../assets/Industries/food.jpg';
+
+
+
 
 export interface Industry {
     id: string;
