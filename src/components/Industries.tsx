@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,7 +15,7 @@ import { industries } from "@/data/IndustryData"; // Ensure this path is correct
 
 const Industries = () => {
   const [autoPlay, setAutoPlay] = useState(true);
-  const autoPlayRef = useRef();
+  const autoPlayRef = useRef<NodeJS.Timeout>();
   const isMobile = useIsMobile();
 
   const startAutoPlay = useCallback(() => {
@@ -30,7 +30,7 @@ const Industries = () => {
   }, []);
 
   // Effect to manage autoplay on mount and unmount
-  useState(() => {
+  useEffect(() => {
     if (autoPlay) {
       startAutoPlay();
     }
