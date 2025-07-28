@@ -105,6 +105,55 @@ export const products = {
         },
     },
 
+    "t10-rugged-smart-pda": {
+        title: "T10 Rugged Smart PDA",
+        description: "The T10 is a rugged Android 14 handheld terminal built for demanding environments such as warehousing, fleet management, asset tracking, and retail. Featuring a powerful Octa-Core processor, advanced 2D barcode scanning options (including long-range Zebra SE5500), and optional UHF RFID capability, the T10 is designed for high-efficiency data collection and durability in the field.",
+        name: "T10 Rugged Smart PDA",
+        icon: "/T10/T103.JPG",  
+        images: [
+            "/T10/T101.JPG",
+            "/T10/T102.jpg",
+            "/T10/T104.JPG",
+        ],
+        features: [
+            "Rugged build with IP65 sealing and 1.5m drop resistance",
+            "Optional long-range 2D scanning and UHF RFID for bulk reading",
+            "Supports Android 14 OS, NFC, and multi-network connectivity",
+        ],
+        specifications: {
+            Display: "5.5-inch IPS HD+ screen (720x1440) with Corning Gorilla Glass. Supports touch input with gloves and wet hands",
+            Processor: "Octa-core 64-bit CPU (2× Arm Cortex-A76 up to 2.2GHz, 6× Arm Cortex-A55 up to 2.0GHz). GPU: Arm Mali-G57 MC2",
+            "Operating System": "Android 14 (Google Certified)",
+            Memory: "4GB RAM + 64GB ROM. Optional: 6GB RAM + 128GB ROM. Expandable up to 256GB via TF card",
+            "Barcode Scanning (Optional)": {
+                "2D Scanners": "Newland N1, Zebra SE4770 / SE5500 (long-distance)",
+                "Supported Codes": "PDF417, QR, Data Matrix, Aztec, MaxiCode, Micro QR, Postal Codes (US, UK, JP, AU, Dutch), and more",
+            },
+            Camera: {
+                Rear: "16MP with autofocus and flash",
+                Front: "8MP",
+            },
+            Battery: "7.7V 3000mAh Li-ion battery + 100mAh backup battery. Standby time: Over 500 hours. Usage time: 12+ hours. Charging time: 3–4 hours (USB Type-C, OTG supported)",
+            Connectivity: {
+                WiFi: "IEEE 802.11 a/b/g/n/ac, dual-band 2.4G/5G",
+                WWAN: "Global: 2G/3G/4G LTE (FDD & TDD bands). Local: CDMA, TD-SCDMA (China specific bands)",
+                Bluetooth: "v5.2",
+                GNSS: "GPS/AGPS, GLONASS, BeiDou (internal antenna)",
+            },
+            Durability: "Operating Temp: -20°C to 50°C. Storage Temp: -40°C to 70°C. Humidity: 5% – 95% non-condensing. Drop Spec: 1.5m (multiple drops across all 6 sides). Sealing: IP65. ESD: ±15kV air, ±6kV contact discharge",
+            Ports: "USB 2.0 Type-C (OTG supported), 2× SIM slots, 1× TF card slot",
+            Extras: "NFC (Optional). Sensors: G-sensor, Proximity, Light Sensor, E-Compass, Gyroscope. Audio: Speaker, Dual Microphones",
+            "RFID (Optional)": {
+                Engine: "EM710 module (based on Impinj)",
+                Frequency: "865–868MHz / 920–925MHz / 902–928MHz",
+                Protocol: "EPC C1 GEN2 / ISO18000-6C",
+                "Read Range": "Up to 20 meters (depends on environment and tag type)",
+                "Read Rate": "Over 200 tags/second (circular polarization)",
+            },
+            Accessories: "Standard: AC adapter, USB cable. Optional: Charging cradle, pistol grip, protective cover, carrying bag",
+        },
+    },
+
 
 
 };

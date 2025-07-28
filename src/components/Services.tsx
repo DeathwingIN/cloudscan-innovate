@@ -38,7 +38,7 @@ const Services = () => {
                   },
                 },
               }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-4 gap-8"
           >
             {Object.entries(products).map(([key, product]) => {
               const Icon = product.icon === "QrCode" ? QrCode : product.icon === "Database" ? Database : Smartphone;

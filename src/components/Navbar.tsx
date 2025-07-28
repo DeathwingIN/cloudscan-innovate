@@ -24,6 +24,7 @@ const Navbar = () => {
     { id: "smart-scanner-pro", name: "Handheld Scanners" },
     { id: "scanner-lite", name: "Mobile Phone-Style Scanners" },
     { id: "cloudsmart-app", name: "Mobile Application" },
+    { id: "t10-rugged-smart-pda", name: "T10 Rugged Smart PDA" },
   ];
 
   useEffect(() => {
