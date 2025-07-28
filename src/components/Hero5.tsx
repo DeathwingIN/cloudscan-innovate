@@ -4,13 +4,25 @@ import { useState, useEffect } from "react";
 const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const slides = [
+    // Desktop slides (existing images)
+    const desktopSlides = [
         { image: "Heo0501.svg" },
         { image: "Heo0502.svg" },
         { image: "Heo0503.svg" },
         { image: "Heo0504.svg" },
         { image: "Heo0505.svg" },
     ];
+
+    // Mobile slides (placeholder images - replace with actual mobile images)
+    const mobileSlides = [
+        { image: "Heo0501-mobile.svg" }, // Placeholder - replace with actual mobile image
+        { image: "Heo0502-mobile.svg" }, // Placeholder - replace with actual mobile image
+        { image: "Heo0503-mobile.svg" }, // Placeholder - replace with actual mobile image
+        { image: "Heo0504-mobile.svg" }, // Placeholder - replace with actual mobile image
+        { image: "Heo0505-mobile.svg" }, // Placeholder - replace with actual mobile image
+    ];
+
+    const slides = desktopSlides; // Default to desktop slides for timer length
 
     useEffect(() => {
         const timer = setInterval(() => {
