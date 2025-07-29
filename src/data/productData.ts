@@ -83,7 +83,7 @@ export const products = {
       "The T10 is a rugged Android 14 handheld terminal built for demanding environments such as warehousing, fleet management, asset tracking, and retail. Featuring a powerful Octa-Core processor, advanced 2D barcode scanning options (including long-range Zebra SE5500), and optional UHF RFID capability, the T10 is designed for high-efficiency data collection and durability in the field.",
     name: "T10 Rugged Smart PDA",
     icon: "/T10/T103.JPG",
-    images: ["/T10/T101.JPG", "/T10/T102.jpg", "/T10/T104.JPG"],
+    images: ["/T10/T101.png", "/T10/T102.jpg", "/T10/T104.JPG"],
     features: [
       "Rugged build with IP65 sealing and 1.5m drop resistance",
       "Optional long-range 2D scanning and UHF RFID for bulk reading",
