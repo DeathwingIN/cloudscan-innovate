@@ -104,18 +104,18 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-14">
               <Link
                 to="/"
-                className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out group"
+                className="relative text-gray-700 hover:text-primary transition-all duration-300 ease-in-out group"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
               <button
                 onClick={() => handleScrollToSection("about")}
-                className="relative text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out group"
+                className="relative text-gray-700 hover:text-primary transition-all duration-300 ease-in-out group"
               >
                 About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
               <div className="relative dropdown-container">
                 <button
@@ -124,7 +124,7 @@ const Navbar = () => {
                       desktopDropdown === "industries" ? null : "industries"
                     )
                   }
-                  className="flex items-center relative text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out group"
+                  className="flex items-center relative text-gray-700 hover:text-primary transition-all duration-300 ease-in-out group"
                 >
                   Industries
                   <ChevronDown
@@ -133,7 +133,7 @@ const Navbar = () => {
                       desktopDropdown === "industries" ? "rotate-180" : ""
                     }`}
                   />
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 {desktopDropdown === "industries" && (
                   <motion.div
@@ -149,7 +149,7 @@ const Navbar = () => {
                         onClick={() =>
                           handleNavigation(`/industries/${industry.id}`)
                         }
-                        className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-300 first:rounded-t-lg last:rounded-b-lg"
+                        className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-300 first:rounded-t-lg last:rounded-b-lg"
                       >
                         {industry.name}
                       </button>
@@ -164,7 +164,7 @@ const Navbar = () => {
                       desktopDropdown === "products" ? null : "products"
                     )
                   }
-                  className="flex items-center relative text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out group"
+                  className="flex items-center relative text-gray-700 hover:text-primary transition-all duration-300 ease-in-out group"
                 >
                   Products
                   <ChevronDown
@@ -173,7 +173,7 @@ const Navbar = () => {
                       desktopDropdown === "products" ? "rotate-180" : ""
                     }`}
                   />
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 </button>
                 {desktopDropdown === "products" && (
                   <motion.div
@@ -189,7 +189,7 @@ const Navbar = () => {
                         onClick={() =>
                           handleNavigation(`/products/${product.id}`)
                         }
-                        className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-300 first:rounded-t-lg last:rounded-b-lg"
+                        className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-300 first:rounded-t-lg last:rounded-b-lg"
                       >
                         {product.name}
                       </button>
@@ -230,14 +230,14 @@ const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
                 to="/"
-                className="block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all duration-300 ease-in-out"
+                className="block px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-50 transition-all duration-300 ease-in-out"
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 Home
               </Link>
               <button
                 onClick={() => handleScrollToSection("about")}
-                className="w-full text-left block px-3 py-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all duration-300 ease-in-out"
+                className="w-full text-left block px-3 py-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-50 transition-all duration-300 ease-in-out"
               >
                 About
               </button>
@@ -248,7 +248,7 @@ const Navbar = () => {
                       prev === "mobile-industries" ? null : "mobile-industries"
                     )
                   }
-                  className="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-300"
+                  className="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-300"
                 >
                   Industries
                   {activeDropdown === "mobile-industries" ? (
@@ -268,7 +268,7 @@ const Navbar = () => {
                       onClick={() =>
                         handleNavigation(`/industries/${industry.id}`)
                       }
-                      className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded transition-all duration-300"
+                      className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded transition-all duration-300"
                     >
                       {industry.name}
                     </button>
@@ -282,7 +282,7 @@ const Navbar = () => {
                       prev === "mobile-products" ? null : "mobile-products"
                     )
                   }
-                  className="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-all duration-300"
+                  className="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:bg-gray-50 hover:text-primary transition-all duration-300"
                 >
                   Products
                   {activeDropdown === "mobile-products" ? (
@@ -302,7 +302,7 @@ const Navbar = () => {
                       onClick={() =>
                         handleNavigation(`/products/${product.id}`)
                       }
-                      className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded transition-all duration-300"
+                      className="block w-full text-left px-2 py-1 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary rounded transition-all duration-300"
                     >
                       {product.name}
                     </button>
@@ -312,7 +312,7 @@ const Navbar = () => {
               <Link to="/contact">
                 <Button
                   variant="default"
-                  className="w-full mt-4 transition-transform hover:scale-105 bg-primary hover:bg-blue-700"
+                  className="w-full mt-4 transition-transform hover:scale-105 bg-primary hover:bg-primary"
                 >
                   Contact Us
                 </Button>
@@ -347,19 +347,19 @@ const Navbar = () => {
                   </span>
                   <button
                     onClick={() => handleNavigation("/")}
-                    className="block py-1 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                    className="block py-1 text-gray-600 hover:text-primary transition-colors duration-300"
                   >
                     Home
                   </button>
                   <button
                     onClick={() => handleScrollToSection("about")}
-                    className="block py-1 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                    className="block py-1 text-gray-600 hover:text-primary transition-colors duration-300"
                   >
                     About
                   </button>
                   <button
                     onClick={() => handleNavigation("/contact")}
-                    className="block py-1 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                    className="block py-1 text-gray-600 hover:text-primary transition-colors duration-300"
                   >
                     Contact Us
                   </button>
@@ -374,7 +374,7 @@ const Navbar = () => {
                       onClick={() =>
                         handleNavigation(`/industries/${industry.id}`)
                       }
-                      className="block py-1 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                      className="block py-1 text-gray-600 hover:text-primary transition-colors duration-300"
                     >
                       {industry.name}
                     </button>
@@ -390,7 +390,7 @@ const Navbar = () => {
                       onClick={() =>
                         handleNavigation(`/products/${product.id}`)
                       }
-                      className="block py-1 text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                      className="block py-1 text-gray-600 hover:text-primary transition-colors duration-300"
                     >
                       {product.name}
                     </button>
