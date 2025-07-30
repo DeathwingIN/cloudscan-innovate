@@ -4,7 +4,7 @@ export const products = {
     title: "Handheld Scanners ",
     description:
       "The SCX41 is a high-performance handheld terminal designed for industrial applications, featuring a 4.0-inch HD screen," +
-      " high-speed Octa-Core processor, and Android 10/13 OS. " +
+      " high-speed Octa-Core processor, and Android OS. " +
       "It supports advanced barcode scanning, NFC, and seamless data collection to improve operational efficiency.",
     name: "SCX41 Handheld Terminal",
     icon: "./HandHeld/H01.jpg",
@@ -17,7 +17,7 @@ export const products = {
     specifications: {
       Display: "4.0-inch HD screen (480x800)",
       Processor: "Cortex-A53 Octa-core 2.0GHz",
-      "Operating System": "Android 10 / Android 13",
+      "Operating System": "Android OS",
       Memory: "4GB RAM + 64GB ROM (expandable up to 256GB)",
       "Barcode Scanning": {
         "1D": "Mindeo SE966, Honeywell N4313",
@@ -39,7 +39,7 @@ export const products = {
   "scanner-lite": {
     title: "Mobile Phone-Style Scanners",
     description:
-      "The SMT71i is a powerful, rugged mobile terminal with a 6-inch IPS display, Android 13 OS, and high-speed Cortex-A76 processor. " +
+      "The SMT71i is a powerful, rugged mobile terminal with a 6-inch IPS display, Android OS, and high-speed Cortex-A76 processor. " +
       "It offers superior barcode scanning, NFC, and UHF RFID for high-performance enterprise applications.",
     name: "SMT71i Handheld Terminal",
     icon: "./MobileType/Mob01.jpg",
@@ -58,7 +58,7 @@ export const products = {
     specifications: {
       Display: "6-inch IPS screen (720x1440 / 1080P)",
       Processor: "Cortex-A76/A55 2.3GHz",
-      "Operating System": "Android 13",
+      "Operating System": "Android OS",
       Memory: "4GB RAM + 64GB Storage",
       "Barcode Scanning": {
         Default: "CM60 | Optional: SE4710, N1",
@@ -80,14 +80,14 @@ export const products = {
   "t10-rugged-smart-pda": {
     title: "T10 Rugged Smart PDA",
     description:
-      "The T10 is a rugged Android 14 handheld terminal built for demanding environments such as warehousing, fleet management, asset tracking, and retail. Featuring a powerful Octa-Core processor, advanced 2D barcode scanning options (including long-range Zebra SE5500), and optional UHF RFID capability, the T10 is designed for high-efficiency data collection and durability in the field.",
+      "The T10 is a rugged Android OS handheld terminal built for demanding environments such as warehousing, fleet management, asset tracking, and retail. Featuring a powerful Octa-Core processor, advanced 2D barcode scanning options (including long-range Zebra SE5500), and optional UHF RFID capability, the T10 is designed for high-efficiency data collection and durability in the field.",
     name: "T10 Rugged Smart PDA",
     icon: "/T10/T103.JPG",
     images: ["/T10/T101.png", "/T10/T102.jpg", "/T10/T104.JPG"],
     features: [
       "Rugged build with IP65 sealing and 1.5m drop resistance",
       "Optional long-range 2D scanning and UHF RFID for bulk reading",
-      "Supports Android 14 OS, NFC, and multi-network connectivity",
+      "Supports Android  OS, NFC, and multi-network connectivity",
     ],
     specifications: {
       Display:
@@ -95,7 +95,7 @@ export const products = {
       Processor:
         "Octa-core 64-bit CPU ( up to 2.2GHz).",
         "GPU": "Arm Mali-G57 MC2",
-      "Operating System": "Android 14",
+      "Operating System": "Android ",
       Memory:
         "4GB RAM + 64GB ROM / 6GB RAM + 128GB ROM.",
         "Expandable": "Up to 256GB via TF card",
