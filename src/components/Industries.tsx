@@ -12,8 +12,10 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { industries } from "@/data/IndustryData"; // Ensure this path is correct
+import type { CarouselApi } from "@/components/ui/carousel";
 
 const Industries = () => {
+  const [api, setApi] = useState<CarouselApi>();
   const [autoPlay, setAutoPlay] = useState(true);
   const autoPlayRef = useRef<NodeJS.Timeout>();
   const isMobile = useIsMobile();
@@ -21,21 +23,40 @@ const Industries = () => {
   const startAutoPlay = useCallback(() => {
     if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     autoPlayRef.current = setInterval(() => {
-      // Autoplay logic remains the same, assuming external control or internal carousel API
-    }, 3000); // Autoplay interval
-  }, []);
+      if (api) {
+        api.scrollNext();
+      }
+    }, 4000); // 4 second interval for autoplay
+  }, [api]);
 
   const stopAutoPlay = useCallback(() => {
-    if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      autoPlayRef.current = undefined;
+    }
   }, []);
 
-  // Effect to manage autoplay on mount and unmount
+  // Effect to manage autoplay when api changes
   useEffect(() => {
+    if (!api) return;
+
     if (autoPlay) {
       startAutoPlay();
+    } else {
+      stopAutoPlay();
     }
+
     return () => stopAutoPlay();
-  }, [autoPlay, startAutoPlay, stopAutoPlay]);
+  }, [autoPlay, api, startAutoPlay, stopAutoPlay]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="py-20 bg-white" id="industries">
@@ -60,13 +81,16 @@ const Industries = () => {
         </div>
         <Carousel
           className="w-full max-w-5xl mx-auto"
+          setApi={setApi}
+          opts={{
+            align: "start",
+            loop: true,
+          }}
           onMouseEnter={() => {
             setAutoPlay(false);
-            stopAutoPlay();
           }}
           onMouseLeave={() => {
             setAutoPlay(true);
-            startAutoPlay();
           }}
         >
           <CarouselContent className="py-4 -ml-4">
