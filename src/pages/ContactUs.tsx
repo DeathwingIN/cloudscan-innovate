@@ -116,7 +116,7 @@ const ContactUs = () => {
               <div>
                 <Input
                   type="email"
-                  placeholder="Email"
+                  placeholder="Email Address"
                   {...register("email", {
                     required: "Email is required",
                     pattern: {
