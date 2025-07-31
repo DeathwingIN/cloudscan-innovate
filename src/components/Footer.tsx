@@ -26,9 +26,9 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Products</h4>
             <ul className="space-y-2">
-              <li><a href="/products/smart-scanner-pro" className="text-gray-400 hover:text-white transition-colors">Handheld Scanners</a></li>
-              <li><a href="/products/scanner-lite" className="text-gray-400 hover:text-white transition-colors">Mobile Phone-Style Scanners</a></li>
-              <li><a href="/products/cloudsmart-app" className="text-gray-400 hover:text-white transition-colors">Cloud Smart Mobile Application</a></li>
+              <li><a href="/products/smart-scanner-pro" className="text-gray-400 hover:text-white transition-colors">SCX400 Series</a></li>
+              <li><a href="/products/scanner-lite" className="text-gray-400 hover:text-white transition-colors">SMT700 Series</a></li>
+              <li><a href="/products/t10-rugged-smart-pda" className="text-gray-400 hover:text-white transition-colors">T1000 Series</a></li>
             </ul>
           </div>
           

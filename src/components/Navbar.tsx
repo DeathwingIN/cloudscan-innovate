@@ -22,9 +22,9 @@ const Navbar = () => {
   ];
 
   const products = [
-    { id: "smart-scanner-pro", name: "Handheld Scanners" },
-    { id: "scanner-lite", name: "Mobile Phone-Style Scanners" },
-    { id: "t10-rugged-smart-pda", name: "T10 Rugged Smart PDA" },
+    { id: "smart-scanner-pro", name: "SCX400 Series" },
+    { id: "scanner-lite", name: "SMT700 Series" },
+    { id: "t10-rugged-smart-pda", name: "T1000 Series" },
     { id: "cloudsmart-app", name: "Mobile Application" },
   ];
 
