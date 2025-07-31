@@ -50,35 +50,35 @@ const Services = () => {
                         visible: {opacity: 1, y: 0},
                       }}
                       transition={{duration: 0.6}}
-                      className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-
+                      className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                      whileTap={{ scale: 0.98 }}
                   >
-                    <div className="flex flex-col justify-between h-full">
-                        <div>
-                            {/* Icon */}
-                            {/*<div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">*/}
-                            {/*    */}
-                            {/*</div>*/}
-                            <img src={product.icon} alt={product.title} className=" max-h-72 bg-cover overflow-hidden rounded-lg flex items-center justify-center mb-6"/>
-                            {/* Title */}
-                            <h3 className="text-xl font-semibold text-secondary mb-4">
-                                {product.title}
-                            </h3>
+                    <div className="flex flex-col h-full">
+                        {/* Image */}
+                        <div className="relative mb-4 flex items-center justify-center">
+                            <img 
+                                src={product.icon} 
+                                alt={product.title} 
+                                className="w-full h-48 object-contain object-center transition-transform duration-300 hover:scale-105"
+                            />
                         </div>
+                        
+                        {/* Title */}
+                        <h3 className="text-lg font-semibold text-secondary mb-3 text-center line-clamp-2 flex-grow">
+                            {product.title}
+                        </h3>
 
-                        {/* Learn More Button (Fixed Position) */}
-                        <div>
+                        {/* Learn More Button */}
+                        <div className="mt-auto">
                             <Link to={`/products/${key}`}>
-                            <Button  className="group w-full md:w-auto">
-                            Learn More
-                            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform"/>
-                          </Button>
-                        </Link>
-                      </div>
+                                <Button className="group w-full transition-all duration-300">
+                                    Learn More
+                                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform"/>
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
-
                   </motion.div>
 
               );

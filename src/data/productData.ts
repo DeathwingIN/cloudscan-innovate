@@ -1,12 +1,12 @@
 // productData.ts
 export const products = {
   "smart-scanner-pro": {
-    title: "Handheld Scanners ",
+    title: "SCX400 Series ",
     description:
-      "The SCX41 is a high-performance handheld terminal designed for industrial applications, featuring a 4.0-inch HD screen," +
+      "The SCX400  is a high-performance handheld terminal designed for industrial applications, featuring a 4.0-inch HD screen," +
       " high-speed Octa-Core processor, and Android OS. " +
       "It supports advanced barcode scanning, NFC, and seamless data collection to improve operational efficiency.",
-    name: "SCX41 Handheld Terminal",
+    name: "SCX400  Handheld Terminal",
     icon: "./HandHeld/H01.jpg",
     images: ["/HandHeld/H02.jpg", "/HandHeld/H03.jpg", "/HandHeld/H04.jpg"],
     features: [
@@ -37,11 +37,11 @@ export const products = {
     },
   },
   "scanner-lite": {
-    title: "Mobile Phone-Style Scanners",
+    title: "SMT700 Series",
     description:
-      "The SMT71i is a powerful, rugged mobile terminal with a 6-inch IPS display, Android OS, and high-speed Cortex-A76 processor. " +
+      "The SMT700 is a powerful, rugged mobile terminal with a 6-inch IPS display, Android OS, and high-speed Cortex-A76 processor. " +
       "It offers superior barcode scanning, NFC, and UHF RFID for high-performance enterprise applications.",
-    name: "SMT71i Handheld Terminal",
+    name: "SMT700 Handheld Terminal",
     icon: "./MobileType/Mob01.jpg",
     images: [
       "/MobileType/Mob06.jpg",
@@ -78,10 +78,10 @@ export const products = {
   },
 
   "t10-rugged-smart-pda": {
-    title: "T10 Rugged Smart PDA",
+    title: "T1000 Series",
     description:
-      "The T10 is a rugged Android OS handheld terminal built for demanding environments such as warehousing, fleet management, asset tracking, and retail. Featuring a powerful Octa-Core processor, advanced 2D barcode scanning options (including long-range Zebra SE5500), and optional UHF RFID capability, the T10 is designed for high-efficiency data collection and durability in the field.",
-    name: "T10 Rugged Smart PDA",
+      "The T1000 is a rugged Android OS handheld terminal built for demanding environments such as warehousing, fleet management, asset tracking, and retail. Featuring a powerful Octa-Core processor, advanced 2D barcode scanning options (including long-range Zebra SE5500), and optional UHF RFID capability, the T1000 is designed for high-efficiency data collection and durability in the field.",
+    name: "T1000 Rugged Smart PDA",
     icon: "/T10/T103.JPG",
     images: ["/T10/T101.png", "/T10/T102.jpg", "/T10/T104.JPG"],
     features: [
