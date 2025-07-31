@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 type ContactFormData = {
   name: string;
@@ -27,12 +27,15 @@ const ContactUs = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     try {
       // EmailJS configuration - you'll need to replace these with your actual values
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id';
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id';
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key';
+      const serviceId =
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "your_service_id";
+      const templateId =
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "your_template_id";
+      const publicKey =
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "your_public_key";
 
       // Prepare template parameters
       const templateParams = {
@@ -41,7 +44,7 @@ const ContactUs = () => {
         company: data.company,
         subject: data.subject,
         message: data.message,
-        to_email: 'contact@yourcompany.com', // Replace with your email
+        to_email: "contact@yourcompany.com", // Replace with your email
       };
 
       // Send email using EmailJS
@@ -52,16 +55,16 @@ const ContactUs = () => {
         publicKey
       );
 
-      console.log('Email sent successfully:', response);
-      
+      console.log("Email sent successfully:", response);
+
       toast({
         title: "Message sent!",
-        description: "Thank you for your message. We'll get back to you as soon as possible.",
+        description:
+          "Thank you for your message. We'll get back to you as soon as possible.",
       });
       reset();
-      
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error("EmailJS error:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again later.",
@@ -88,7 +91,7 @@ const ContactUs = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>
                 <Input
-                  placeholder="Your Name"
+                  placeholder="Name"
                   {...register("name", { required: "Name is required" })}
                   className={errors.name ? "border-destructive" : ""}
                 />
@@ -100,8 +103,20 @@ const ContactUs = () => {
               </div>
               <div>
                 <Input
+                  placeholder="Company"
+                  {...register("company", { required: "Company is required" })}
+                  className={errors.company ? "border-destructive" : ""}
+                />
+                {errors.company && (
+                  <p className="text-sm text-destructive mt-1">
+                    {errors.company.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <Input
                   type="email"
-                  placeholder="Your Email"
+                  placeholder="Email"
                   {...register("email", {
                     required: "Email is required",
                     pattern: {
@@ -129,21 +144,10 @@ const ContactUs = () => {
                   </p>
                 )}
               </div>
-              <div>
-                <Input
-                  placeholder="Your Company"
-                  {...register("company", { required: "Company is required" })}
-                  className={errors.company ? "border-destructive" : ""}
-                />
-                {errors.company && (
-                  <p className="text-sm text-destructive mt-1">
-                    {errors.company.message}
-                  </p>
-                )}
-              </div>
+
               <div>
                 <Textarea
-                  placeholder="Your Message"
+                  placeholder="Message"
                   {...register("message", { required: "Message is required" })}
                   className={`min-h-[150px] ${
                     errors.message ? "border-destructive" : ""
