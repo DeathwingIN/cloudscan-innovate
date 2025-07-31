@@ -86,9 +86,9 @@ This guide will help you deploy your CloudScan website to Hostinger with a worki
 Edit your `.env` file:
 
 ```env
-REACT_APP_EMAILJS_SERVICE_ID=service_your_actual_id_here
-REACT_APP_EMAILJS_TEMPLATE_ID=template_your_actual_id_here
-REACT_APP_EMAILJS_PUBLIC_KEY=your_actual_public_key_here
+VITE_EMAILJS_SERVICE_ID=service_your_actual_id_here
+VITE_EMAILJS_TEMPLATE_ID=template_your_actual_id_here
+VITE_EMAILJS_PUBLIC_KEY=your_actual_public_key_here
 ```
 
 **Replace the values** with your actual EmailJS IDs from Step 1!

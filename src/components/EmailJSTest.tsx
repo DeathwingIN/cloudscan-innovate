@@ -11,9 +11,9 @@ const EmailJSTest = () => {
     setIsTesting(true);
     
     try {
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       // Check if all required environment variables are set
       if (!serviceId || !templateId || !publicKey) {
@@ -63,9 +63,9 @@ const EmailJSTest = () => {
       </p>
       
       <div className="space-y-2 text-xs text-gray-500 mb-4">
-        <p><strong>Service ID:</strong> {process.env.REACT_APP_EMAILJS_SERVICE_ID || 'Not set'}</p>
-        <p><strong>Template ID:</strong> {process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'Not set'}</p>
-        <p><strong>Public Key:</strong> {process.env.REACT_APP_EMAILJS_PUBLIC_KEY ? 'Set' : 'Not set'}</p>
+        <p><strong>Service ID:</strong> {import.meta.env.VITE_EMAILJS_SERVICE_ID || 'Not set'}</p>
+        <p><strong>Template ID:</strong> {import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'Not set'}</p>
+        <p><strong>Public Key:</strong> {import.meta.env.VITE_EMAILJS_PUBLIC_KEY ? 'Set' : 'Not set'}</p>
       </div>
       
       <Button 

@@ -30,9 +30,9 @@ const ContactUs = () => {
     
     try {
       // EmailJS configuration - you'll need to replace these with your actual values
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'your_service_id';
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'your_template_id';
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'your_public_key';
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key';
 
       // Prepare template parameters
       const templateParams = {
