@@ -82,8 +82,8 @@ export const products = {
     description:
       "The T1000 is a rugged Android OS handheld terminal built for demanding environments such as warehousing, fleet management, asset tracking, and retail. Featuring a powerful Octa-Core processor, advanced 2D barcode scanning options (including long-range Zebra SE5500), and optional UHF RFID capability, the T1000 is designed for high-efficiency data collection and durability in the field.",
     name: "T1000 Rugged Smart PDA",
-    icon: "/T10/T103.JPG",
-    images: ["/T10/T101.png", "/T10/T102.jpg", "/T10/T104.JPG"],
+    icon: "/T10/T103.JPG?v=2",
+    images: ["/T10/T101.png?v=2", "/T10/T102.jpg?v=2", "/T10/T104.JPG?v=2"],
     features: [
       "Rugged build with IP65 sealing and 1.5m drop resistance",
       "Optional long-range 2D scanning and UHF RFID for bulk reading",

@@ -1,4 +1,22 @@
 Options -MultiViews
 RewriteEngine On
+
+# Cache control for static assets
+<filesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+    ExpiresActive on
+    ExpiresDefault "access plus 1 month"
+    Header append Cache-Control "public"
+</filesMatch>
+
+# Cache control for HTML files
+<filesMatch "\.(html|htm)$">
+    ExpiresActive on
+    ExpiresDefault "access plus 0 seconds"
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</filesMatch>
+
+# SPA routing fallback
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QR,L]
