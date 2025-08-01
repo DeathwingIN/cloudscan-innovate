@@ -21,6 +21,7 @@ const queryClient = new QueryClient();
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
   useEffect(() => {
+    console.log("Current pathname:", pathname);
     if (!hash) {
       window.scrollTo({
         top: 0,
