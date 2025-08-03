@@ -58,12 +58,13 @@ const Hero = () => {
                             src={slide.image}
                             alt={`Hero Slide ${index + 1}`}
                             className="w-full h-full object-cover object-center"
+                            loading={index === 0 ? "eager" : "lazy"}
                         />
                     </div>
                 ))}
             </div>
 
-            {/* Tablet Images - Visible on medium screens (md to lg) */}
+            {/* Tablet Images - Visible on medium to large screens (md to lg) */}
             <div className="hidden md:block lg:hidden">
                 {tabletSlides.map((slide, index) => (
                     <div
@@ -77,7 +78,8 @@ const Hero = () => {
                         <img
                             src={slide.image}
                             alt={`Tablet Hero Slide ${index + 1}`}
-                            className="w-full h-full object-cover object-center"
+                            className="w-full h-full object-contain object-center bg-white"
+                            loading={index === 0 ? "eager" : "lazy"}
                             onError={(e) => {
                                 // Fallback to desktop image if tablet image doesn't exist
                                 const target = e.target as HTMLImageElement;
@@ -88,7 +90,7 @@ const Hero = () => {
                 ))}
             </div>
 
-            {/* Mobile Images - Visible on small screens (md and below) */}
+            {/* Mobile Images - Visible on small screens (below md) */}
             <div className="block md:hidden">
                 {mobileSlides.map((slide, index) => (
                     <div
@@ -103,6 +105,7 @@ const Hero = () => {
                             src={slide.image}
                             alt={`Mobile Hero Slide ${index + 1}`}
                             className="w-full h-full object-cover object-center"
+                            loading={index === 0 ? "eager" : "lazy"}
                             onError={(e) => {
                                 // Fallback to desktop image if mobile image doesn't exist
                                 const target = e.target as HTMLImageElement;

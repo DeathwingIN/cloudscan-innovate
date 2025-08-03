@@ -1,5 +1,10 @@
 Options -MultiViews
 RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
 
 # Cache control for static assets
 <filesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
@@ -19,4 +24,5 @@ RewriteEngine On
 
 # SPA routing fallback
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^ index.html [QR,L]
+RewriteRule ^ index.html [QSA,L]
+
