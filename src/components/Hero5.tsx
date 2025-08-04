@@ -1,97 +1,211 @@
-
-import x0001 from "../../public/000.png";
-import x11 from "../../public/1.png";
-import x21 from "../../public/2.png";
-import x31 from "../../public/3.png";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
-  return (
-    <div className="bg-white w-full min-h-screen">
-      {/* Desktop Layout */}
-      <div className="hidden lg:flex lg:flex-row lg:justify-center lg:w-full lg:h-screen">
-        <div className="bg-white overflow-hidden w-[1440px] h-full flex items-center justify-center">
-          <div className="relative w-[1466px] h-[700px] left-[95px]">
-            <img
-              className="absolute w-[600px] h-[600px] top-14 left-[700px] object-cover"
-              alt="Element"
-              src={x0001}
-            />
+    // --- Manually Adjustable Breakpoints ---
+    // Adjust these pixel values to change when the layout switches.
+    const DESKTOP_BREAKPOINT = 1024;
+    const TABLET_BREAKPOINT = 768;
 
-            <p className="absolute w-[630px] top-[150px] left-8 [font-family:'Inter-Regular',Helvetica] font-normal text-black text-5xl tracking-[0] leading-[normal]">
-              Boost Efficiency with
-              <br />
-              Smart Tech &amp;
-              <br />
-              Custom Solutions
-            </p>
+    // --- Utility function to detect device type ---
+    const getDeviceType = (width: number, height: number) => {
+        const aspectRatio = width / height;
+        
+        if (width >= DESKTOP_BREAKPOINT) {
+            // Large tablets like iPad Pro have wider screens but lower aspect ratios
+            // iPad Pro 12.9" has aspect ratio ~1.33, regular desktops are usually ~1.77+
+            if (aspectRatio < 1.6) {
+                return { 
+                    type: 'large-tablet', 
+                    useContain: true,   // Prevent cropping on tablet-like devices
+                    bgWhite: true       // Add white background for contain mode
+                };
+            }
+            return { 
+                type: 'desktop', 
+                useContain: false,      // Desktop images are designed for cover mode
+                bgWhite: false 
+            };
+        } else if (width >= TABLET_BREAKPOINT) {
+            return { 
+                type: 'tablet', 
+                useContain: true,       // Regular tablets also benefit from contain mode
+                bgWhite: true 
+            };
+        }
+        return { 
+            type: 'mobile', 
+            useContain: false,          // Mobile images work well with cover mode
+            bgWhite: false 
+        };
+    };
 
-            <div className="absolute w-[663px] h-[55px] top-[340px] left-8 bg-[#00abff] rounded-[10px]" />
+    // --- Data for different devices ---
+    const desktopSlides = [
+        { image: "Heo0501.svg" },
+        { image: "Heo0502.svg" },
+        { image: "Heo0503.svg" },
+        { image: "Heo0504.svg" },
+        { image: "Heo0505.svg" },
+    ];
 
-            <p className="absolute top-[352px] left-[84px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-2xl tracking-[0] leading-[normal]">
-              Smarter Scanning. Faster Operations. Zero Errors
-            </p>
+    const tabletSlides = [
+        { image: "Heo0501-tablet.svg" },
+        { image: "Heo0502-tablet.svg" },
+        { image: "Heo0503-tablet.svg" },
+        { image: "Heo0504-tablet.svg" },
+        { image: "Heo0505-tablet.svg" },
+    ];
 
-            <div className="absolute w-[1466px] h-[100px] top-[550px] left-0 bg-[#ffde59] rounded-[30px] flex items-center justify-start gap-8 px-12">
-              <img
-                className="w-[200px] h-[80px] object-cover"
-                alt="Element"
-                src={x11}
-              />
-              
-              <img
-                className="w-[120px] h-[80px] object-cover"
-                alt="Element"
-                src={x21}
-              />
-              
-              <img
-                className="w-[180px] h-[80px] object-cover"
-                alt="Element"
-                src={x31}
-              />
+    const mobileSlides = [
+        { image: "Heo0501-mobile.svg" },
+        { image: "Heo0502-mobile.svg" },
+        { image: "Heo0503-mobile.svg" },
+        { image: "Heo0504-mobile.svg" },
+        { image: "Heo0505-mobile.svg" },
+    ];
+    
+    // --- State Management ---
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [activeSlides, setActiveSlides] = useState(desktopSlides);
+    const [deviceInfo, setDeviceInfo] = useState({
+        type: 'desktop',
+        useContain: false,
+        bgWhite: false
+    });
+
+    // --- Hooks ---
+
+    // useEffect to set the correct slides based on window width
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            
+            const deviceType = getDeviceType(width, height);
+            setDeviceInfo(deviceType);
+            
+            // Uncomment for debugging device detection
+            // console.log(`Device: ${width}x${height}, ratio: ${(width/height).toFixed(2)}, type: ${deviceType.type}`);
+            
+            if (width >= DESKTOP_BREAKPOINT) {
+                setActiveSlides(desktopSlides);
+            } else if (width >= TABLET_BREAKPOINT) {
+                setActiveSlides(tabletSlides);
+            } else {
+                setActiveSlides(mobileSlides);
+            }
+        };
+
+        handleResize(); // Set the initial slides on mount
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup: remove the event listener when the component unmounts
+        return () => window.removeEventListener("resize", handleResize);
+    }, [DESKTOP_BREAKPOINT, TABLET_BREAKPOINT]); // Rerun if breakpoints were to change dynamically
+
+    // Slideshow timer effect
+    useEffect(() => {
+        setCurrentSlide(0); // Reset to first slide if the slide deck changes
+
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % activeSlides.length);
+        }, 3000);
+
+        return () => clearInterval(timer);
+    }, [activeSlides]);
+
+    return (
+        <div className="relative w-full h-screen max-h-screen overflow-hidden bg-white">
+            {/* Desktop Images */}
+            <div className="hidden lg:block">
+                {desktopSlides.map((slide, index) => (
+                    <div
+                        key={`desktop-${index}`}
+                        className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                            index === currentSlide
+                                ? "opacity-100 scale-100"
+                                : "opacity-0 scale-105"
+                        }`}
+                    >
+                        <img
+                            src={slide.image}
+                            alt={`Hero Slide ${index + 1}`}
+                            // Remember you can change 'object-center' to 'object-top', 'object-left', etc.
+                            // to control image cropping on different screens.
+                            className={`w-full h-full ${deviceInfo.useContain ? 'object-contain' : 'object-cover'} object-center ${deviceInfo.bgWhite ? 'bg-white' : ''}`}
+                            loading={index === 0 ? "eager" : "lazy"}
+                        />
+                    </div>
+                ))}
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Mobile and Tablet Layout */}
-      <div className="lg:hidden flex flex-col min-h-screen px-4  py-[100px]">
-        {/* Content Section - Top */}
-        <div className="space-y-6 mb-8">
-          {/* Main Title */}
-          <div className="text-center">
-            <h1 className="font-normal text-black text-3xl sm:text-4xl md:text-5xl tracking-[0] leading-normal [font-family:'Inter-Regular',Helvetica]">
-              Boost Efficiency with
-              <br />
-              Smart Tech &amp;
-              <br />
-              Custom Solutions
-            </h1>
-          </div>
-
-          {/* Subtitle with Blue Background */}
-          <div className="mx-auto max-w-lg">
-            <div className="bg-[#00abff] rounded-[10px] px-6 py-4 text-center">
-              <p className="font-normal text-white text-lg sm:text-xl md:text-2xl tracking-[0] leading-normal [font-family:'Inter-Regular',Helvetica]">
-                Smarter Scanning. Faster Operations. Zero Errors
-              </p>
+            {/* Tablet Images */}
+            <div className="hidden md:block lg:hidden">
+                {tabletSlides.map((slide, index) => (
+                    <div
+                        key={`tablet-${index}`}
+                        className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                            index === currentSlide
+                                ? "opacity-100 scale-100"
+                                : "opacity-0 scale-105"
+                        }`}
+                    >
+                        <img
+                            src={slide.image}
+                            alt={`Tablet Hero Slide ${index + 1}`}
+                            className={`w-full h-full ${deviceInfo.useContain ? 'object-contain' : 'object-cover'} object-center ${deviceInfo.bgWhite ? 'bg-white' : ''}`}
+                            loading={index === 0 ? "eager" : "lazy"}
+                            onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = desktopSlides[index].image;
+                            }}
+                        />
+                    </div>
+                ))}
             </div>
-          </div>
-        </div>
 
-        {/* Main Hero Image Section - Right Corner */}
-        <div className="flex-1 flex items-end justify-end">
-          <div className="relative w-96 sm:w-[750px] md:w-64">
-            <img
-              className="w-full h-auto object-cover"
-              alt="Element"
-              src={x0001}
-            />
-          </div>
+            {/* Mobile Images */}
+            <div className="block md:hidden">
+                {mobileSlides.map((slide, index) => (
+                    <div
+                        key={`mobile-${index}`}
+                        className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                            index === currentSlide
+                                ? "opacity-100 scale-100"
+                                : "opacity-0 scale-105"
+                        }`}
+                    >
+                        <img
+                            src={slide.image}
+                            alt={`Mobile Hero Slide ${index + 1}`}
+                            className={`w-full h-full ${deviceInfo.type === 'mobile' ? 'object-cover' : 'object-contain'} object-center ${deviceInfo.bgWhite ? 'bg-white' : ''}`}
+                            loading={index === 0 ? "eager" : "lazy"}
+                            onError={(e) => {
+                                const target = e.target as HTMLImageElement;
+                                target.src = desktopSlides[index].image;
+                            }}
+                        />
+                    </div>
+                ))}
+            </div>
+
+            {/* Responsive Navigation Dots */}
+            <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-10 left-1/2 -translate-x-1/2 flex space-x-2">
+                {activeSlides.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        aria-label={`Go to slide ${index + 1}`}
+                        className={`w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full transition-all duration-500 ${
+                            index === currentSlide
+                                ? "bg-primary w-6 sm:w-8 md:w-10 scale-125"
+                                : "bg-white/80 hover:bg-white/70"
+                        }`}
+                    />
+                ))}
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Hero;
